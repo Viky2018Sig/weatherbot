@@ -4,10 +4,11 @@ Weather Trading Bot v2 — Polymarket
 Kelly Criterion + Expected Value simulation.
 
 Usage:
-    python weather_bot_v2.py           # Paper mode with $1000 virtual balance
-    python weather_bot_v2.py --live    # Real trades
-    python weather_bot_v2.py --positions
-    python weather_bot_v2.py --reset   # Reset simulation balance
+    python bot_v2.py           # Paper mode with $1000 virtual balance
+    python bot_v2.py --live    # Simulate trades against real prices
+    python bot_v2.py --positions
+    python bot_v2.py --reset   # Reset simulation balance
+    python bot_v2.py --monitor # Live price monitor, updates dashboard every 10s
 """
 
 import re
@@ -31,22 +32,40 @@ PRICE_DROP_SIGNAL = _cfg.get("price_drop_threshold", 0.10)
 
 # Kelly + EV settings
 NOAA_ACCURACY     = 0.78        # NOAA forecast accuracy for 1-3 day predictions
-KELLY_FRACTION    = 0.25        # Use 1/4 Kelly for safety (full Kelly is too aggressive)
+KELLY_FRACTION    = 0.25        # Use 1/4 Kelly for safety
 MAX_POSITION_PCT  = 0.10        # Never bet more than 10% of balance on one trade
-MIN_EV            = 0.05        # Minimum EV to enter (5 cents per dollar risked)
+MIN_EV            = 0.05        # Minimum EV to enter
 SIM_BALANCE       = 1000.0      # Starting virtual balance
 
+# Airport coordinates — match the exact stations Polymarket resolves on
 LOCATIONS = {
-    "NYC":     {"lat": 40.77,  "lon": -73.87, "name": "New York City"},
-    "Chicago": {"lat": 41.97,  "lon": -87.90, "name": "Chicago"},
-    "Seattle": {"lat": 47.45,  "lon": -122.30, "name": "Seattle"},
-    "Atlanta": {"lat": 33.64,  "lon": -84.43,  "name": "Atlanta"},
-    "Dallas":  {"lat": 32.90,  "lon": -97.04,  "name": "Dallas"},
-    "Miami":   {"lat": 25.80,  "lon": -80.29,  "name": "Miami"},
+    "nyc":     {"lat": 40.7772, "lon": -73.8726, "name": "New York City"},  # KLGA LaGuardia
+    "chicago": {"lat": 41.9742, "lon": -87.9073, "name": "Chicago"},        # KORD O'Hare
+    "miami":   {"lat": 25.7959, "lon": -80.2870, "name": "Miami"},          # KMIA
+    "dallas":  {"lat": 32.8471, "lon": -96.8518, "name": "Dallas"},         # KDAL Love Field
+    "seattle": {"lat": 47.4502, "lon": -122.3088, "name": "Seattle"},       # KSEA Sea-Tac
+    "atlanta": {"lat": 33.6407, "lon": -84.4277,  "name": "Atlanta"},       # KATL Hartsfield
 }
 
-ACTIVE_LOCATIONS = _cfg.get("locations", "NYC,Chicago,Seattle,Atlanta,Dallas,Miami").split(",")
-ACTIVE_LOCATIONS = [l.strip() for l in ACTIVE_LOCATIONS]
+# NWS hourly endpoints per city
+NWS_ENDPOINTS = {
+    "nyc":     "https://api.weather.gov/gridpoints/OKX/37,39/forecast/hourly",
+    "chicago": "https://api.weather.gov/gridpoints/LOT/66,77/forecast/hourly",
+    "miami":   "https://api.weather.gov/gridpoints/MFL/106,51/forecast/hourly",
+    "dallas":  "https://api.weather.gov/gridpoints/FWD/87,107/forecast/hourly",
+    "seattle": "https://api.weather.gov/gridpoints/SEW/124,61/forecast/hourly",
+    "atlanta": "https://api.weather.gov/gridpoints/FFC/50,82/forecast/hourly",
+}
+
+# Station IDs for real observations
+STATION_IDS = {
+    "nyc": "KLGA", "chicago": "KORD", "miami": "KMIA",
+    "dallas": "KDAL", "seattle": "KSEA", "atlanta": "KATL",
+}
+
+ACTIVE_LOCATIONS = _cfg.get("locations", "nyc,chicago,miami,dallas,seattle,atlanta").split(",")
+ACTIVE_LOCATIONS = [l.strip().lower() for l in ACTIVE_LOCATIONS]
+
 MONTHS = ["january","february","march","april","may","june",
           "july","august","september","october","november","december"]
 
@@ -75,12 +94,12 @@ def skip(msg): print(f"{C.GRAY}  ⏸️  {msg}{C.RESET}")
 def calculate_ev(our_prob: float, market_price: float) -> float:
     """
     Expected Value per $1 risked.
-    EV = (our_prob * payout) - (1 - our_prob) * 1
-    payout = (1 / market_price) - 1  (net profit per $1 if we win)
-    
+    EV = (our_prob * payout) - (1 - our_prob)
+    payout = (1 / market_price) - 1
+
     Example: our_prob=0.75, price=0.08
     payout = 1/0.08 - 1 = 11.5x
-    EV = 0.75 * 11.5 - 0.25 = 8.375 - 0.25 = +$8.12 per $1 risked
+    EV = 0.75 * 11.5 - 0.25 = +$8.12 per $1 risked
     """
     if market_price <= 0 or market_price >= 1:
         return 0.0
@@ -93,28 +112,23 @@ def calculate_kelly(our_prob: float, market_price: float) -> float:
     """
     Kelly Criterion: optimal fraction of bankroll to bet.
     f* = (p * b - q) / b
-    where:
-        p = our probability of winning
-        q = 1 - p (probability of losing)
-        b = net odds (payout per $1 bet)
-    
+
     We apply KELLY_FRACTION (0.25) for safety — fractional Kelly.
     Result is capped at MAX_POSITION_PCT (10% of balance).
     """
     if market_price <= 0 or market_price >= 1:
         return 0.0
-    b = (1.0 / market_price) - 1.0  # net odds
+    b = (1.0 / market_price) - 1.0
     p = our_prob
     q = 1.0 - p
     kelly = (p * b - q) / b
-    kelly = max(0.0, kelly)                    # never negative
-    kelly = kelly * KELLY_FRACTION             # fractional Kelly
-    kelly = min(kelly, MAX_POSITION_PCT)       # cap at max position
+    kelly = max(0.0, kelly)
+    kelly = kelly * KELLY_FRACTION
+    kelly = min(kelly, MAX_POSITION_PCT)
     return round(kelly, 4)
 
 
 def calculate_position_size(kelly_fraction: float, balance: float) -> float:
-    """Convert Kelly fraction to dollar amount."""
     return round(kelly_fraction * balance, 2)
 
 # =============================================================================
@@ -147,38 +161,60 @@ def reset_sim():
     import os
     if os.path.exists(SIM_FILE):
         os.remove(SIM_FILE)
-    if os.path.exists("positions.json"):
-        os.remove("positions.json")
     print(f"{C.GREEN}  ✅ Simulation reset — balance back to ${SIM_BALANCE:.2f}{C.RESET}")
 
 # =============================================================================
-# OPEN-METEO FORECAST
+# NWS FORECAST
 # =============================================================================
 
-def get_forecast(location: str) -> dict:
-    loc = LOCATIONS[location]
-    url = (
-        f"https://api.open-meteo.com/v1/forecast"
-        f"?latitude={loc['lat']}&longitude={loc['lon']}"
-        f"&daily=temperature_2m_max&temperature_unit=fahrenheit&forecast_days=4"
-    )
+def get_forecast(city_slug: str) -> dict:
+    """
+    Fetch daily max temperature from NWS.
+    Combines real station observations (past hours today) with
+    hourly forecast (upcoming hours) to get the true daily maximum.
+    """
+    forecast_url = NWS_ENDPOINTS.get(city_slug)
+    station_id = STATION_IDS.get(city_slug)
+    daily_max = {}
+    headers = {"User-Agent": "weatherbot/1.0"}
+
+    # Real observations — what already happened today
     try:
-        r = requests.get(url, timeout=10)
-        data = r.json()
-        result = {}
-        for date, temp in zip(data["daily"]["time"], data["daily"]["temperature_2m_max"]):
-            result[date] = round(temp, 1)
-        return result
+        obs_url = f"https://api.weather.gov/stations/{station_id}/observations?limit=48"
+        r = requests.get(obs_url, timeout=10, headers=headers)
+        for obs in r.json().get("features", []):
+            props = obs["properties"]
+            time_str = props.get("timestamp", "")[:10]
+            temp_c = props.get("temperature", {}).get("value")
+            if temp_c is not None:
+                temp_f = round(temp_c * 9/5 + 32)
+                if time_str not in daily_max or temp_f > daily_max[time_str]:
+                    daily_max[time_str] = temp_f
     except Exception as e:
-        warn(f"Forecast error for {location}: {e}")
-        return {}
+        warn(f"Observations error for {city_slug}: {e}")
+
+    # Hourly forecast — upcoming hours
+    try:
+        r = requests.get(forecast_url, timeout=10, headers=headers)
+        periods = r.json()["properties"]["periods"]
+        for p in periods:
+            date = p["startTime"][:10]
+            temp = p["temperature"]
+            if p.get("temperatureUnit") == "C":
+                temp = round(temp * 9/5 + 32)
+            if date not in daily_max or temp > daily_max[date]:
+                daily_max[date] = temp
+    except Exception as e:
+        warn(f"Forecast error for {city_slug}: {e}")
+
+    return daily_max
 
 # =============================================================================
 # POLYMARKET API
 # =============================================================================
 
-def get_polymarket_event(location_slug: str, month: str, day: int, year: int) -> dict:
-    slug = f"highest-temperature-in-{location_slug}-on-{month}-{day}-{year}"
+def get_polymarket_event(city_slug: str, month: str, day: int, year: int) -> dict:
+    slug = f"highest-temperature-in-{city_slug}-on-{month}-{day}-{year}"
     url = f"https://gamma-api.polymarket.com/events?slug={slug}"
     try:
         r = requests.get(url, timeout=10)
@@ -213,9 +249,6 @@ def parse_temp_range(question: str) -> tuple:
     m = re.search(r'between (\d+)-(\d+)°F', question, re.IGNORECASE)
     if m: return (int(m.group(1)), int(m.group(2)))
     return None
-
-def temp_in_range(temp: float, rng: tuple) -> bool:
-    return rng[0] <= temp <= rng[1]
 
 def hours_until_resolution(event: dict) -> float:
     try:
@@ -254,7 +287,8 @@ def show_positions():
         try:
             url = f"https://gamma-api.polymarket.com/markets/{mid}"
             r = requests.get(url, timeout=5)
-            current_price = float(r.json().get("outcomePrices", ["0.5"])[0])
+            prices = json.loads(r.json().get("outcomePrices", "[0.5,0.5]"))
+            current_price = float(prices[0])
         except Exception:
             current_price = pos["entry_price"]
 
@@ -264,12 +298,11 @@ def show_positions():
         print(f"\n  • {pos['question'][:65]}...")
         print(f"    Entry: ${pos['entry_price']:.3f} | Now: ${current_price:.3f} | "
               f"Shares: {pos['shares']:.1f} | PnL: {pnl_str}")
-        print(f"    Kelly used: {pos['kelly_pct']:.1%} | EV: {pos['ev']:.2f} | Cost: ${pos['cost']:.2f}")
+        print(f"    Kelly used: {pos.get('kelly_pct', 0):.1%} | EV: {pos.get('ev', 0):.2f} | Cost: ${pos['cost']:.2f}")
 
-    balance_str = f"${sim['balance']:.2f}"
+    print(f"\n  Balance:      ${sim['balance']:.2f}")
     pnl_color = C.GREEN if total_pnl >= 0 else C.RED
-    print(f"\n  Balance:    {balance_str}")
-    print(f"  Open PnL:   {pnl_color}{'+'if total_pnl>=0 else ''}{total_pnl:.2f}{C.RESET}")
+    print(f"  Open PnL:     {pnl_color}{'+'if total_pnl>=0 else ''}{total_pnl:.2f}{C.RESET}")
     print(f"  Total trades: {sim['total_trades']} | W/L: {sim['wins']}/{sim['losses']}")
 
 # =============================================================================
@@ -284,7 +317,7 @@ def run(dry_run: bool = True):
     balance = sim["balance"]
     positions = sim["positions"]
 
-    mode = f"{C.YELLOW}PAPER MODE{C.RESET}" if dry_run else f"{C.RED}LIVE MODE{C.RESET}"
+    mode = f"{C.YELLOW}PAPER MODE{C.RESET}" if dry_run else f"{C.GREEN}LIVE MODE{C.RESET}"
     starting = sim["starting_balance"]
     total_return = (balance - starting) / starting * 100
     return_str = f"{C.GREEN}+{total_return:.1f}%{C.RESET}" if total_return >= 0 else f"{C.RED}{total_return:.1f}%{C.RESET}"
@@ -308,7 +341,8 @@ def run(dry_run: bool = True):
         try:
             url = f"https://gamma-api.polymarket.com/markets/{mid}"
             r = requests.get(url, timeout=5)
-            current_price = float(r.json().get("outcomePrices", ["0.5"])[0])
+            prices = json.loads(r.json().get("outcomePrices", "[0.5,0.5]"))
+            current_price = float(prices[0])
         except Exception:
             continue
 
@@ -329,7 +363,7 @@ def run(dry_run: bool = True):
                     "closed_at": datetime.now().isoformat(),
                 })
                 del positions[mid]
-                ok(f"Closed position — PnL: {'+'if pnl>=0 else ''}{pnl:.2f}")
+                ok(f"Closed — PnL: {'+'if pnl>=0 else ''}{pnl:.2f}")
             else:
                 skip("Paper mode — not selling")
 
@@ -339,23 +373,21 @@ def run(dry_run: bool = True):
     # Scan entries
     print(f"\n{C.BOLD}🔍 Scanning for entry signals...{C.RESET}")
 
-    for loc_key in ACTIVE_LOCATIONS:
-        loc_key = loc_key.strip()
-        if loc_key not in LOCATIONS:
-            warn(f"Unknown location: {loc_key}")
+    for city_slug in ACTIVE_LOCATIONS:
+        if city_slug not in LOCATIONS:
+            warn(f"Unknown location: {city_slug}")
             continue
 
-        loc_data = LOCATIONS[loc_key]
-        loc_slug = loc_key.lower().replace(" ", "-")
+        loc_data = LOCATIONS[city_slug]
 
-        if loc_key not in forecast_cache:
-            forecast_cache[loc_key] = get_forecast(loc_key)
+        if city_slug not in forecast_cache:
+            forecast_cache[city_slug] = get_forecast(city_slug)
 
-        forecast = forecast_cache[loc_key]
+        forecast = forecast_cache[city_slug]
         if not forecast:
             continue
 
-        for i in range(0, 3):
+        for i in range(0, 4):
             date = datetime.now() + timedelta(days=i)
             date_str = date.strftime("%Y-%m-%d")
             month = MONTHS[date.month - 1]
@@ -366,7 +398,7 @@ def run(dry_run: bool = True):
             if forecast_temp is None:
                 continue
 
-            event = get_polymarket_event(loc_slug, month, day, year)
+            event = get_polymarket_event(city_slug, month, day, year)
             if not event:
                 continue
 
@@ -379,12 +411,11 @@ def run(dry_run: bool = True):
                 skip(f"Resolves in {hours_left:.0f}h — too soon")
                 continue
 
-            # Find matching bucket
             matched = None
             for market in event.get("markets", []):
                 question = market.get("question", "")
                 rng = parse_temp_range(question)
-                if rng and temp_in_range(forecast_temp, rng):
+                if rng and rng[0] <= forecast_temp <= rng[1]:
                     try:
                         prices = json.loads(market.get("outcomePrices", "[0.5,0.5]"))
                         yes_price = float(prices[0])
@@ -411,10 +442,8 @@ def run(dry_run: bool = True):
             if trend["dropped"]:
                 info(f"📉 Price dropped {abs(trend['change']):.0%} in 24h — stronger signal")
 
-            # ── KELLY + EV CALCULATION ──
-            our_prob = NOAA_ACCURACY  # base accuracy
-
-            # Boost if strong trend signal
+            # Kelly + EV
+            our_prob = NOAA_ACCURACY
             if trend["dropped"] and abs(trend["change"]) > 0.20:
                 our_prob = min(0.90, our_prob + 0.05)
 
@@ -432,7 +461,6 @@ def run(dry_run: bool = True):
             print(f"  {C.CYAN}  Kelly fraction:   {kelly_pct:.1%} of balance{C.RESET}")
             print(f"  {C.CYAN}  Position size:    ${position_size:.2f}{C.RESET}")
 
-            # Entry checks
             if price >= ENTRY_THRESHOLD:
                 skip(f"Price ${price:.3f} above threshold ${ENTRY_THRESHOLD:.2f}")
                 continue
@@ -474,7 +502,7 @@ def run(dry_run: bool = True):
                     "ev": ev,
                     "our_prob": our_prob,
                     "date": date_str,
-                    "location": loc_key,
+                    "location": city_slug,
                     "forecast_temp": forecast_temp,
                     "opened_at": datetime.now().isoformat(),
                 }
@@ -492,14 +520,12 @@ def run(dry_run: bool = True):
                 skip("Paper mode — not buying")
                 trades_executed += 1
 
-    # Save simulation state
     if not dry_run:
         sim["balance"] = round(balance, 2)
         sim["positions"] = positions
         sim["peak_balance"] = max(sim["peak_balance"], balance)
         save_sim(sim)
 
-    # Summary
     print(f"\n{'=' * 55}")
     print(f"{C.BOLD}📊 Summary:{C.RESET}")
     info(f"Opportunities found: {opportunities}")
@@ -511,22 +537,18 @@ def run(dry_run: bool = True):
         print(f"\n  {C.YELLOW}[PAPER MODE — use --live to simulate trades against real prices]{C.RESET}")
 
 # =============================================================================
-# LIVE MONITOR — updates prices every N seconds, auto-exits on threshold
+# LIVE MONITOR
 # =============================================================================
 
 import time as _time
 
 def monitor(interval: int = 10):
     """
-    Background monitor — fetches live prices from Polymarket every N seconds,
-    updates PnL in simulation.json so the dashboard stays current.
+    Background monitor — fetches live prices every N seconds,
+    updates simulation.json so the dashboard stays current.
     Auto-exits positions when price hits EXIT_THRESHOLD.
-
-    Run: python polymarket_weather_bot.py --monitor
-    Stop: Ctrl+C
     """
     print(f"\n{C.BOLD}{C.CYAN}📡 Live Monitor — refreshing every {interval}s{C.RESET}")
-    print(f"  Dashboard will update automatically")
     print(f"  Auto-exit threshold: ${EXIT_THRESHOLD:.2f}")
     print(f"  Press Ctrl+C to stop\n")
 
@@ -543,7 +565,6 @@ def monitor(interval: int = 10):
             total_pnl = 0
 
             for mid, pos in list(positions.items()):
-                # Fetch current price from Polymarket
                 try:
                     url = f"https://gamma-api.polymarket.com/markets/{mid}"
                     r = requests.get(url, timeout=5)
@@ -563,7 +584,6 @@ def monitor(interval: int = 10):
                       f"{pos['question'][:45]}...  "
                       f"${current_price:.3f}  {pnl_str}")
 
-                # Auto-exit if price hit threshold
                 if current_price >= EXIT_THRESHOLD:
                     ok(f"AUTO EXIT: {pos['question'][:50]}... PnL: +${pnl:.2f}")
                     sim["balance"] = round(sim["balance"] + pos["cost"] + pnl, 2)
@@ -578,14 +598,10 @@ def monitor(interval: int = 10):
                         "cost": pos["cost"],
                         "kelly_pct": pos.get("kelly_pct", 0),
                         "ev": pos.get("ev", 0),
-                        "location": pos.get("location", ""),
-                        "date": pos.get("date", ""),
-                        "our_prob": pos.get("our_prob", 0),
                         "closed_at": datetime.now().isoformat(),
                     })
                     del sim["positions"][mid]
 
-            sim["positions"] = {k: v for k, v in sim["positions"].items()}
             sim["peak_balance"] = max(sim.get("peak_balance", sim["balance"]), sim["balance"])
 
             total_str = f"{C.GREEN}+${total_pnl:.2f}{C.RESET}" if total_pnl >= 0 else f"{C.RED}-${abs(total_pnl):.2f}{C.RESET}"
@@ -603,7 +619,6 @@ def monitor(interval: int = 10):
 
         _time.sleep(interval)
 
-
 # =============================================================================
 # CLI
 # =============================================================================
@@ -613,8 +628,8 @@ if __name__ == "__main__":
     parser.add_argument("--live", action="store_true", help="Execute trades (updates simulation balance)")
     parser.add_argument("--positions", action="store_true", help="Show open positions")
     parser.add_argument("--reset", action="store_true", help="Reset simulation to $1000")
-    parser.add_argument("--monitor", action="store_true", help="Live price monitor — updates dashboard every 10s")
-    parser.add_argument("--interval", type=int, default=10, help="Monitor refresh interval in seconds (default: 10)")
+    parser.add_argument("--monitor", action="store_true", help="Live price monitor")
+    parser.add_argument("--interval", type=int, default=10, help="Monitor refresh interval in seconds")
     args = parser.parse_args()
 
     if args.reset:
@@ -624,5 +639,4 @@ if __name__ == "__main__":
     elif args.monitor:
         monitor(interval=args.interval)
     else:
-
         run(dry_run=not args.live)
