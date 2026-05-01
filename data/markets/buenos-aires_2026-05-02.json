@@ -1,0 +1,314 @@
+{
+  "city": "buenos-aires",
+  "city_name": "Buenos Aires",
+  "date": "2026-05-02",
+  "unit": "C",
+  "station": "SAEZ",
+  "event_end_date": "2026-05-02T12:00:00Z",
+  "hours_at_discovery": 54.9,
+  "status": "open",
+  "position": null,
+  "actual_temp": null,
+  "resolved_outcome": null,
+  "pnl": null,
+  "forecast_snapshots": [
+    {
+      "ts": "2026-04-30T05:04:21.388436+00:00",
+      "horizon": "D+2",
+      "hours_left": 54.9,
+      "ecmwf": 16.2,
+      "hrrr": null,
+      "metar": null,
+      "best": 16.2,
+      "best_source": "ecmwf"
+    },
+    {
+      "ts": "2026-04-30T06:05:06.655652+00:00",
+      "horizon": "D+2",
+      "hours_left": 53.9,
+      "ecmwf": 16.2,
+      "hrrr": null,
+      "metar": null,
+      "best": 16.2,
+      "best_source": "ecmwf"
+    },
+    {
+      "ts": "2026-04-30T07:06:01.001044+00:00",
+      "horizon": "D+2",
+      "hours_left": 52.9,
+      "ecmwf": 16.2,
+      "hrrr": null,
+      "metar": null,
+      "best": 16.2,
+      "best_source": "ecmwf"
+    },
+    {
+      "ts": "2026-04-30T08:07:26.399292+00:00",
+      "horizon": "D+2",
+      "hours_left": 51.9,
+      "ecmwf": 16.2,
+      "hrrr": null,
+      "metar": null,
+      "best": 16.2,
+      "best_source": "ecmwf"
+    },
+    {
+      "ts": "2026-04-30T09:08:30.169042+00:00",
+      "horizon": "D+2",
+      "hours_left": 50.9,
+      "ecmwf": 16.4,
+      "hrrr": null,
+      "metar": null,
+      "best": 16.4,
+      "best_source": "ecmwf"
+    },
+    {
+      "ts": "2026-04-30T11:22:47.610431+00:00",
+      "horizon": "D+2",
+      "hours_left": 48.6,
+      "ecmwf": 16.4,
+      "hrrr": null,
+      "metar": null,
+      "best": 16.4,
+      "best_source": "ecmwf"
+    },
+    {
+      "ts": "2026-04-30T12:23:39.577251+00:00",
+      "horizon": "D+2",
+      "hours_left": 47.6,
+      "ecmwf": 16.4,
+      "hrrr": null,
+      "metar": null,
+      "best": 16.4,
+      "best_source": "ecmwf"
+    },
+    {
+      "ts": "2026-04-30T13:24:25.757082+00:00",
+      "horizon": "D+2",
+      "hours_left": 46.6,
+      "ecmwf": 16.4,
+      "hrrr": null,
+      "metar": null,
+      "best": 16.4,
+      "best_source": "ecmwf"
+    },
+    {
+      "ts": "2026-04-30T14:25:19.812973+00:00",
+      "horizon": "D+2",
+      "hours_left": 45.6,
+      "ecmwf": 16.0,
+      "hrrr": null,
+      "metar": null,
+      "best": 16.0,
+      "best_source": "ecmwf"
+    },
+    {
+      "ts": "2026-04-30T15:26:19.016568+00:00",
+      "horizon": "D+2",
+      "hours_left": 44.6,
+      "ecmwf": 16.0,
+      "hrrr": null,
+      "metar": null,
+      "best": 16.0,
+      "best_source": "ecmwf"
+    }
+  ],
+  "market_snapshots": [
+    {
+      "ts": "2026-04-30T05:04:21.388436+00:00",
+      "top_bucket": "16.0-16.0C",
+      "top_price": 0.345
+    },
+    {
+      "ts": "2026-04-30T06:05:06.655652+00:00",
+      "top_bucket": "16.0-16.0C",
+      "top_price": 0.385
+    },
+    {
+      "ts": "2026-04-30T07:06:01.001044+00:00",
+      "top_bucket": "16.0-16.0C",
+      "top_price": 0.355
+    },
+    {
+      "ts": "2026-04-30T08:07:26.399292+00:00",
+      "top_bucket": "17.0-17.0C",
+      "top_price": 0.32
+    },
+    {
+      "ts": "2026-04-30T09:08:30.169042+00:00",
+      "top_bucket": "17.0-17.0C",
+      "top_price": 0.315
+    },
+    {
+      "ts": "2026-04-30T11:22:47.610431+00:00",
+      "top_bucket": "17.0-17.0C",
+      "top_price": 0.3
+    },
+    {
+      "ts": "2026-04-30T12:23:39.577251+00:00",
+      "top_bucket": "17.0-17.0C",
+      "top_price": 0.3
+    },
+    {
+      "ts": "2026-04-30T13:24:25.757082+00:00",
+      "top_bucket": "17.0-17.0C",
+      "top_price": 0.3
+    },
+    {
+      "ts": "2026-04-30T14:25:19.812973+00:00",
+      "top_bucket": "17.0-17.0C",
+      "top_price": 0.315
+    },
+    {
+      "ts": "2026-04-30T15:26:19.016568+00:00",
+      "top_bucket": "17.0-17.0C",
+      "top_price": 0.345
+    }
+  ],
+  "all_outcomes": [
+    {
+      "question": "Will the highest temperature in Buenos Aires be 10°C or below on May 2?",
+      "market_id": "2122193",
+      "range": [
+        -999.0,
+        10.0
+      ],
+      "bid": 0.002,
+      "ask": 0.002,
+      "price": 0.002,
+      "spread": 0.0,
+      "volume": 637.0
+    },
+    {
+      "question": "Will the highest temperature in Buenos Aires be 11°C on May 2?",
+      "market_id": "2122194",
+      "range": [
+        11.0,
+        11.0
+      ],
+      "bid": 0.004,
+      "ask": 0.004,
+      "price": 0.004,
+      "spread": 0.0,
+      "volume": 216.0
+    },
+    {
+      "question": "Will the highest temperature in Buenos Aires be 12°C on May 2?",
+      "market_id": "2122195",
+      "range": [
+        12.0,
+        12.0
+      ],
+      "bid": 0.0065,
+      "ask": 0.0065,
+      "price": 0.0065,
+      "spread": 0.0,
+      "volume": 356.0
+    },
+    {
+      "question": "Will the highest temperature in Buenos Aires be 13°C on May 2?",
+      "market_id": "2122196",
+      "range": [
+        13.0,
+        13.0
+      ],
+      "bid": 0.009,
+      "ask": 0.009,
+      "price": 0.009,
+      "spread": 0.0,
+      "volume": 624.0
+    },
+    {
+      "question": "Will the highest temperature in Buenos Aires be 14°C on May 2?",
+      "market_id": "2122197",
+      "range": [
+        14.0,
+        14.0
+      ],
+      "bid": 0.045,
+      "ask": 0.045,
+      "price": 0.045,
+      "spread": 0.0,
+      "volume": 131.0
+    },
+    {
+      "question": "Will the highest temperature in Buenos Aires be 15°C on May 2?",
+      "market_id": "2122198",
+      "range": [
+        15.0,
+        15.0
+      ],
+      "bid": 0.085,
+      "ask": 0.085,
+      "price": 0.085,
+      "spread": 0.0,
+      "volume": 112.0
+    },
+    {
+      "question": "Will the highest temperature in Buenos Aires be 16°C on May 2?",
+      "market_id": "2122199",
+      "range": [
+        16.0,
+        16.0
+      ],
+      "bid": 0.3,
+      "ask": 0.3,
+      "price": 0.3,
+      "spread": 0.0,
+      "volume": 226.0
+    },
+    {
+      "question": "Will the highest temperature in Buenos Aires be 17°C on May 2?",
+      "market_id": "2122200",
+      "range": [
+        17.0,
+        17.0
+      ],
+      "bid": 0.345,
+      "ask": 0.345,
+      "price": 0.345,
+      "spread": 0.0,
+      "volume": 160.0
+    },
+    {
+      "question": "Will the highest temperature in Buenos Aires be 18°C on May 2?",
+      "market_id": "2122201",
+      "range": [
+        18.0,
+        18.0
+      ],
+      "bid": 0.22,
+      "ask": 0.22,
+      "price": 0.22,
+      "spread": 0.0,
+      "volume": 109.0
+    },
+    {
+      "question": "Will the highest temperature in Buenos Aires be 19°C on May 2?",
+      "market_id": "2122202",
+      "range": [
+        19.0,
+        19.0
+      ],
+      "bid": 0.045,
+      "ask": 0.045,
+      "price": 0.045,
+      "spread": 0.0,
+      "volume": 342.0
+    },
+    {
+      "question": "Will the highest temperature in Buenos Aires be 20°C or higher on May 2?",
+      "market_id": "2122203",
+      "range": [
+        20.0,
+        999.0
+      ],
+      "bid": 0.0205,
+      "ask": 0.0205,
+      "price": 0.0205,
+      "spread": 0.0,
+      "volume": 688.0
+    }
+  ],
+  "created_at": "2026-04-30T05:04:23.522495+00:00"
+}

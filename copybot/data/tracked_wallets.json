@@ -1,0 +1,26 @@
+[
+  {
+    "wallet": "0x13e0562f854cfa4f5e648a33f5dd490553587465",
+    "roi": 0.0,
+    "winrate": 0.0,
+    "total_trades": 10,
+    "total_pnl": 0.0,
+    "avg_trade_size": 1.4,
+    "strategy": "unknown",
+    "strategy_confidence": 0,
+    "tracked_since": "2026-04-27T15:38:10.754228+00:00",
+    "signals_generated": 0
+  },
+  {
+    "wallet": "0xeeaa88d2ce5cb0484d931a596cad1204f3dc4abf",
+    "roi": -0.492,
+    "winrate": 0.0,
+    "total_trades": 6,
+    "total_pnl": -3.06,
+    "avg_trade_size": 1.04,
+    "strategy": "unknown",
+    "strategy_confidence": 0,
+    "tracked_since": "2026-04-27T15:38:10.754359+00:00",
+    "signals_generated": 0
+  }
+]

@@ -1,0 +1,18 @@
+{
+  "min_trades": 20,
+  "min_roi": 0.05,
+  "min_winrate": 0.52,
+  "min_signal_confidence": 50,
+  "min_trade_size": 50,
+  "max_capital_pct": 0.05,
+  "max_per_market": 0.1,
+  "stop_loss_pct": 0.2,
+  "n_markets_to_scan": 50,
+  "monitor_interval": 300,
+  "max_tracked_wallets": 20,
+  "delay_test_seconds": [
+    30,
+    120,
+    300
+  ]
+}

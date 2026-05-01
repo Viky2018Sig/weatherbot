@@ -1,0 +1,314 @@
+{
+  "city": "toronto",
+  "city_name": "Toronto",
+  "date": "2026-05-02",
+  "unit": "C",
+  "station": "CYYZ",
+  "event_end_date": "2026-05-02T12:00:00Z",
+  "hours_at_discovery": 54.9,
+  "status": "open",
+  "position": null,
+  "actual_temp": null,
+  "resolved_outcome": null,
+  "pnl": null,
+  "forecast_snapshots": [
+    {
+      "ts": "2026-04-30T05:04:18.048683+00:00",
+      "horizon": "D+2",
+      "hours_left": 54.9,
+      "ecmwf": 8.4,
+      "hrrr": null,
+      "metar": null,
+      "best": 8.4,
+      "best_source": "ecmwf"
+    },
+    {
+      "ts": "2026-04-30T06:05:02.666571+00:00",
+      "horizon": "D+2",
+      "hours_left": 53.9,
+      "ecmwf": 8.4,
+      "hrrr": null,
+      "metar": null,
+      "best": 8.4,
+      "best_source": "ecmwf"
+    },
+    {
+      "ts": "2026-04-30T07:05:57.858063+00:00",
+      "horizon": "D+2",
+      "hours_left": 52.9,
+      "ecmwf": 8.4,
+      "hrrr": null,
+      "metar": null,
+      "best": 8.4,
+      "best_source": "ecmwf"
+    },
+    {
+      "ts": "2026-04-30T08:07:16.722544+00:00",
+      "horizon": "D+2",
+      "hours_left": 51.9,
+      "ecmwf": 8.4,
+      "hrrr": null,
+      "metar": null,
+      "best": 8.4,
+      "best_source": "ecmwf"
+    },
+    {
+      "ts": "2026-04-30T09:08:25.665587+00:00",
+      "horizon": "D+2",
+      "hours_left": 50.9,
+      "ecmwf": 8.2,
+      "hrrr": null,
+      "metar": null,
+      "best": 8.2,
+      "best_source": "ecmwf"
+    },
+    {
+      "ts": "2026-04-30T11:22:43.374795+00:00",
+      "horizon": "D+2",
+      "hours_left": 48.6,
+      "ecmwf": 8.2,
+      "hrrr": null,
+      "metar": null,
+      "best": 8.2,
+      "best_source": "ecmwf"
+    },
+    {
+      "ts": "2026-04-30T12:23:35.466624+00:00",
+      "horizon": "D+2",
+      "hours_left": 47.6,
+      "ecmwf": 8.2,
+      "hrrr": null,
+      "metar": null,
+      "best": 8.2,
+      "best_source": "ecmwf"
+    },
+    {
+      "ts": "2026-04-30T13:24:21.064459+00:00",
+      "horizon": "D+2",
+      "hours_left": 46.6,
+      "ecmwf": 8.2,
+      "hrrr": null,
+      "metar": null,
+      "best": 8.2,
+      "best_source": "ecmwf"
+    },
+    {
+      "ts": "2026-04-30T14:25:15.629320+00:00",
+      "horizon": "D+2",
+      "hours_left": 45.6,
+      "ecmwf": 7.5,
+      "hrrr": null,
+      "metar": null,
+      "best": 7.5,
+      "best_source": "ecmwf"
+    },
+    {
+      "ts": "2026-04-30T15:26:14.512052+00:00",
+      "horizon": "D+2",
+      "hours_left": 44.6,
+      "ecmwf": 7.5,
+      "hrrr": null,
+      "metar": null,
+      "best": 7.5,
+      "best_source": "ecmwf"
+    }
+  ],
+  "market_snapshots": [
+    {
+      "ts": "2026-04-30T05:04:18.048683+00:00",
+      "top_bucket": "8.0-8.0C",
+      "top_price": 0.365
+    },
+    {
+      "ts": "2026-04-30T06:05:02.666571+00:00",
+      "top_bucket": "9.0-9.0C",
+      "top_price": 0.37
+    },
+    {
+      "ts": "2026-04-30T07:05:57.858063+00:00",
+      "top_bucket": "9.0-9.0C",
+      "top_price": 0.365
+    },
+    {
+      "ts": "2026-04-30T08:07:16.722544+00:00",
+      "top_bucket": "9.0-9.0C",
+      "top_price": 0.32
+    },
+    {
+      "ts": "2026-04-30T09:08:25.665587+00:00",
+      "top_bucket": "9.0-9.0C",
+      "top_price": 0.325
+    },
+    {
+      "ts": "2026-04-30T11:22:43.374795+00:00",
+      "top_bucket": "9.0-9.0C",
+      "top_price": 0.335
+    },
+    {
+      "ts": "2026-04-30T12:23:35.466624+00:00",
+      "top_bucket": "9.0-9.0C",
+      "top_price": 0.33
+    },
+    {
+      "ts": "2026-04-30T13:24:21.064459+00:00",
+      "top_bucket": "9.0-9.0C",
+      "top_price": 0.34
+    },
+    {
+      "ts": "2026-04-30T14:25:15.629320+00:00",
+      "top_bucket": "9.0-9.0C",
+      "top_price": 0.335
+    },
+    {
+      "ts": "2026-04-30T15:26:14.512052+00:00",
+      "top_bucket": "9.0-9.0C",
+      "top_price": 0.335
+    }
+  ],
+  "all_outcomes": [
+    {
+      "question": "Will the highest temperature in Toronto be 4°C or below on May 2?",
+      "market_id": "2122215",
+      "range": [
+        -999.0,
+        4.0
+      ],
+      "bid": 0.006,
+      "ask": 0.006,
+      "price": 0.006,
+      "spread": 0.0,
+      "volume": 1401.0
+    },
+    {
+      "question": "Will the highest temperature in Toronto be 5°C on May 2?",
+      "market_id": "2122216",
+      "range": [
+        5.0,
+        5.0
+      ],
+      "bid": 0.003,
+      "ask": 0.003,
+      "price": 0.003,
+      "spread": 0.0,
+      "volume": 1546.0
+    },
+    {
+      "question": "Will the highest temperature in Toronto be 6°C on May 2?",
+      "market_id": "2122217",
+      "range": [
+        6.0,
+        6.0
+      ],
+      "bid": 0.026,
+      "ask": 0.026,
+      "price": 0.026,
+      "spread": 0.0,
+      "volume": 251.0
+    },
+    {
+      "question": "Will the highest temperature in Toronto be 7°C on May 2?",
+      "market_id": "2122218",
+      "range": [
+        7.0,
+        7.0
+      ],
+      "bid": 0.065,
+      "ask": 0.065,
+      "price": 0.065,
+      "spread": 0.0,
+      "volume": 144.0
+    },
+    {
+      "question": "Will the highest temperature in Toronto be 8°C on May 2?",
+      "market_id": "2122219",
+      "range": [
+        8.0,
+        8.0
+      ],
+      "bid": 0.1,
+      "ask": 0.1,
+      "price": 0.1,
+      "spread": 0.0,
+      "volume": 85.0
+    },
+    {
+      "question": "Will the highest temperature in Toronto be 9°C on May 2?",
+      "market_id": "2122220",
+      "range": [
+        9.0,
+        9.0
+      ],
+      "bid": 0.335,
+      "ask": 0.335,
+      "price": 0.335,
+      "spread": 0.0,
+      "volume": 84.0
+    },
+    {
+      "question": "Will the highest temperature in Toronto be 10°C on May 2?",
+      "market_id": "2122221",
+      "range": [
+        10.0,
+        10.0
+      ],
+      "bid": 0.26,
+      "ask": 0.26,
+      "price": 0.26,
+      "spread": 0.0,
+      "volume": 57.0
+    },
+    {
+      "question": "Will the highest temperature in Toronto be 11°C on May 2?",
+      "market_id": "2122222",
+      "range": [
+        11.0,
+        11.0
+      ],
+      "bid": 0.2,
+      "ask": 0.2,
+      "price": 0.2,
+      "spread": 0.0,
+      "volume": 55.0
+    },
+    {
+      "question": "Will the highest temperature in Toronto be 12°C on May 2?",
+      "market_id": "2122223",
+      "range": [
+        12.0,
+        12.0
+      ],
+      "bid": 0.055,
+      "ask": 0.055,
+      "price": 0.055,
+      "spread": 0.0,
+      "volume": 92.0
+    },
+    {
+      "question": "Will the highest temperature in Toronto be 13°C on May 2?",
+      "market_id": "2122224",
+      "range": [
+        13.0,
+        13.0
+      ],
+      "bid": 0.044,
+      "ask": 0.044,
+      "price": 0.044,
+      "spread": 0.0,
+      "volume": 203.0
+    },
+    {
+      "question": "Will the highest temperature in Toronto be 14°C or higher on May 2?",
+      "market_id": "2122225",
+      "range": [
+        14.0,
+        999.0
+      ],
+      "bid": 0.0085,
+      "ask": 0.0085,
+      "price": 0.0085,
+      "spread": 0.0,
+      "volume": 224.0
+    }
+  ],
+  "created_at": "2026-04-30T05:04:19.466507+00:00"
+}

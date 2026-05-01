@@ -1,0 +1,338 @@
+{
+  "city": "paris",
+  "city_name": "Paris",
+  "date": "2026-05-02",
+  "unit": "C",
+  "station": "LFPG",
+  "event_end_date": "2026-05-02T12:00:00Z",
+  "hours_at_discovery": 54.9,
+  "status": "open",
+  "position": {
+    "market_id": "2122178",
+    "question": "Will the highest temperature in Paris be 25°C on May 2?",
+    "bucket_low": 25.0,
+    "bucket_high": 25.0,
+    "entry_price": 0.21,
+    "bid_at_entry": 0.19,
+    "spread": 0.02,
+    "shares": 4.76,
+    "cost": 1.0,
+    "p": 0.3049,
+    "ev": 0.4519,
+    "kelly": 0.0393,
+    "forecast_temp": 24.8,
+    "forecast_src": "ecmwf",
+    "sigma": 1.2598387825432267,
+    "opened_at": "2026-04-30T07:05:33.070744+00:00",
+    "status": "open",
+    "pnl": null,
+    "exit_price": null,
+    "close_reason": null,
+    "closed_at": null,
+    "stop_price": 0.21,
+    "trailing_activated": true
+  },
+  "actual_temp": null,
+  "resolved_outcome": null,
+  "pnl": null,
+  "forecast_snapshots": [
+    {
+      "ts": "2026-04-30T05:03:59.867260+00:00",
+      "horizon": "D+2",
+      "hours_left": 54.9,
+      "ecmwf": 24.8,
+      "hrrr": null,
+      "metar": null,
+      "best": 24.8,
+      "best_source": "ecmwf"
+    },
+    {
+      "ts": "2026-04-30T06:04:45.757405+00:00",
+      "horizon": "D+2",
+      "hours_left": 53.9,
+      "ecmwf": 24.8,
+      "hrrr": null,
+      "metar": null,
+      "best": 24.8,
+      "best_source": "ecmwf"
+    },
+    {
+      "ts": "2026-04-30T07:05:33.070744+00:00",
+      "horizon": "D+2",
+      "hours_left": 52.9,
+      "ecmwf": 24.8,
+      "hrrr": null,
+      "metar": null,
+      "best": 24.8,
+      "best_source": "ecmwf"
+    },
+    {
+      "ts": "2026-04-30T08:06:44.301226+00:00",
+      "horizon": "D+2",
+      "hours_left": 51.9,
+      "ecmwf": 24.8,
+      "hrrr": null,
+      "metar": null,
+      "best": 24.8,
+      "best_source": "ecmwf"
+    },
+    {
+      "ts": "2026-04-30T09:08:07.525605+00:00",
+      "horizon": "D+2",
+      "hours_left": 50.9,
+      "ecmwf": 23.7,
+      "hrrr": null,
+      "metar": null,
+      "best": 23.7,
+      "best_source": "ecmwf"
+    },
+    {
+      "ts": "2026-04-30T11:22:23.662561+00:00",
+      "horizon": "D+2",
+      "hours_left": 48.6,
+      "ecmwf": 23.7,
+      "hrrr": null,
+      "metar": null,
+      "best": 23.7,
+      "best_source": "ecmwf"
+    },
+    {
+      "ts": "2026-04-30T12:23:15.198198+00:00",
+      "horizon": "D+2",
+      "hours_left": 47.6,
+      "ecmwf": 23.7,
+      "hrrr": null,
+      "metar": null,
+      "best": 23.7,
+      "best_source": "ecmwf"
+    },
+    {
+      "ts": "2026-04-30T13:24:04.459620+00:00",
+      "horizon": "D+2",
+      "hours_left": 46.6,
+      "ecmwf": 23.7,
+      "hrrr": null,
+      "metar": null,
+      "best": 23.7,
+      "best_source": "ecmwf"
+    },
+    {
+      "ts": "2026-04-30T14:24:52.053949+00:00",
+      "horizon": "D+2",
+      "hours_left": 45.6,
+      "ecmwf": 24.5,
+      "hrrr": null,
+      "metar": null,
+      "best": 24.5,
+      "best_source": "ecmwf"
+    },
+    {
+      "ts": "2026-04-30T15:25:45.806981+00:00",
+      "horizon": "D+2",
+      "hours_left": 44.6,
+      "ecmwf": 24.5,
+      "hrrr": null,
+      "metar": null,
+      "best": 24.5,
+      "best_source": "ecmwf"
+    }
+  ],
+  "market_snapshots": [
+    {
+      "ts": "2026-04-30T05:03:59.867260+00:00",
+      "top_bucket": "24.0-24.0C",
+      "top_price": 0.385
+    },
+    {
+      "ts": "2026-04-30T06:04:45.757405+00:00",
+      "top_bucket": "26.0-26.0C",
+      "top_price": 0.185
+    },
+    {
+      "ts": "2026-04-30T07:05:33.070744+00:00",
+      "top_bucket": "24.0-24.0C",
+      "top_price": 0.33
+    },
+    {
+      "ts": "2026-04-30T08:06:44.301226+00:00",
+      "top_bucket": "24.0-24.0C",
+      "top_price": 0.33
+    },
+    {
+      "ts": "2026-04-30T09:08:07.525605+00:00",
+      "top_bucket": "24.0-24.0C",
+      "top_price": 0.33
+    },
+    {
+      "ts": "2026-04-30T11:22:23.662561+00:00",
+      "top_bucket": "24.0-24.0C",
+      "top_price": 0.32
+    },
+    {
+      "ts": "2026-04-30T12:23:15.198198+00:00",
+      "top_bucket": "24.0-24.0C",
+      "top_price": 0.32
+    },
+    {
+      "ts": "2026-04-30T13:24:04.459620+00:00",
+      "top_bucket": "24.0-24.0C",
+      "top_price": 0.355
+    },
+    {
+      "ts": "2026-04-30T14:24:52.053949+00:00",
+      "top_bucket": "24.0-24.0C",
+      "top_price": 0.36
+    },
+    {
+      "ts": "2026-04-30T15:25:45.806981+00:00",
+      "top_bucket": "24.0-24.0C",
+      "top_price": 0.3
+    }
+  ],
+  "all_outcomes": [
+    {
+      "question": "Will the highest temperature in Paris be 18°C or below on May 2?",
+      "market_id": "2122171",
+      "range": [
+        -999.0,
+        18.0
+      ],
+      "bid": 0.0015,
+      "ask": 0.0015,
+      "price": 0.0015,
+      "spread": 0.0,
+      "volume": 667.0
+    },
+    {
+      "question": "Will the highest temperature in Paris be 19°C on May 2?",
+      "market_id": "2122172",
+      "range": [
+        19.0,
+        19.0
+      ],
+      "bid": 0.0025,
+      "ask": 0.0025,
+      "price": 0.0025,
+      "spread": 0.0,
+      "volume": 366.0
+    },
+    {
+      "question": "Will the highest temperature in Paris be 20°C on May 2?",
+      "market_id": "2122173",
+      "range": [
+        20.0,
+        20.0
+      ],
+      "bid": 0.0025,
+      "ask": 0.0025,
+      "price": 0.0025,
+      "spread": 0.0,
+      "volume": 1463.0
+    },
+    {
+      "question": "Will the highest temperature in Paris be 21°C on May 2?",
+      "market_id": "2122174",
+      "range": [
+        21.0,
+        21.0
+      ],
+      "bid": 0.0045,
+      "ask": 0.0045,
+      "price": 0.0045,
+      "spread": 0.0,
+      "volume": 529.0
+    },
+    {
+      "question": "Will the highest temperature in Paris be 22°C on May 2?",
+      "market_id": "2122175",
+      "range": [
+        22.0,
+        22.0
+      ],
+      "bid": 0.0105,
+      "ask": 0.0105,
+      "price": 0.0105,
+      "spread": 0.0,
+      "volume": 656.0
+    },
+    {
+      "question": "Will the highest temperature in Paris be 23°C on May 2?",
+      "market_id": "2122176",
+      "range": [
+        23.0,
+        23.0
+      ],
+      "bid": 0.1,
+      "ask": 0.1,
+      "price": 0.1,
+      "spread": 0.0,
+      "volume": 689.0
+    },
+    {
+      "question": "Will the highest temperature in Paris be 24°C on May 2?",
+      "market_id": "2122177",
+      "range": [
+        24.0,
+        24.0
+      ],
+      "bid": 0.3,
+      "ask": 0.3,
+      "price": 0.3,
+      "spread": 0.0,
+      "volume": 753.0
+    },
+    {
+      "question": "Will the highest temperature in Paris be 25°C on May 2?",
+      "market_id": "2122178",
+      "range": [
+        25.0,
+        25.0
+      ],
+      "bid": 0.3,
+      "ask": 0.3,
+      "price": 0.3,
+      "spread": 0.0,
+      "volume": 1332.0
+    },
+    {
+      "question": "Will the highest temperature in Paris be 26°C on May 2?",
+      "market_id": "2122179",
+      "range": [
+        26.0,
+        26.0
+      ],
+      "bid": 0.205,
+      "ask": 0.205,
+      "price": 0.205,
+      "spread": 0.0,
+      "volume": 581.0
+    },
+    {
+      "question": "Will the highest temperature in Paris be 27°C on May 2?",
+      "market_id": "2122180",
+      "range": [
+        27.0,
+        27.0
+      ],
+      "bid": 0.0655,
+      "ask": 0.0655,
+      "price": 0.0655,
+      "spread": 0.0,
+      "volume": 492.0
+    },
+    {
+      "question": "Will the highest temperature in Paris be 28°C or higher on May 2?",
+      "market_id": "2122181",
+      "range": [
+        28.0,
+        999.0
+      ],
+      "bid": 0.044,
+      "ask": 0.044,
+      "price": 0.044,
+      "spread": 0.0,
+      "volume": 473.0
+    }
+  ],
+  "created_at": "2026-04-30T05:04:02.174783+00:00"
+}

@@ -1,0 +1,314 @@
+{
+  "city": "atlanta",
+  "city_name": "Atlanta",
+  "date": "2026-05-02",
+  "unit": "F",
+  "station": "KATL",
+  "event_end_date": "2026-05-02T12:00:00Z",
+  "hours_at_discovery": 54.9,
+  "status": "open",
+  "position": null,
+  "actual_temp": null,
+  "resolved_outcome": null,
+  "pnl": null,
+  "forecast_snapshots": [
+    {
+      "ts": "2026-04-30T05:03:55.197368+00:00",
+      "horizon": "D+2",
+      "hours_left": 54.9,
+      "ecmwf": 65,
+      "hrrr": 68,
+      "metar": null,
+      "best": 68,
+      "best_source": "hrrr"
+    },
+    {
+      "ts": "2026-04-30T06:04:41.587920+00:00",
+      "horizon": "D+2",
+      "hours_left": 53.9,
+      "ecmwf": 65,
+      "hrrr": 67,
+      "metar": null,
+      "best": 67,
+      "best_source": "hrrr"
+    },
+    {
+      "ts": "2026-04-30T07:05:27.962653+00:00",
+      "horizon": "D+2",
+      "hours_left": 52.9,
+      "ecmwf": 65,
+      "hrrr": 67,
+      "metar": null,
+      "best": 67,
+      "best_source": "hrrr"
+    },
+    {
+      "ts": "2026-04-30T08:06:39.326327+00:00",
+      "horizon": "D+2",
+      "hours_left": 51.9,
+      "ecmwf": 65,
+      "hrrr": 67,
+      "metar": null,
+      "best": 67,
+      "best_source": "hrrr"
+    },
+    {
+      "ts": "2026-04-30T09:08:02.175693+00:00",
+      "horizon": "D+2",
+      "hours_left": 50.9,
+      "ecmwf": 62,
+      "hrrr": 67,
+      "metar": null,
+      "best": 67,
+      "best_source": "hrrr"
+    },
+    {
+      "ts": "2026-04-30T11:22:18.506422+00:00",
+      "horizon": "D+2",
+      "hours_left": 48.6,
+      "ecmwf": 62,
+      "hrrr": 67,
+      "metar": null,
+      "best": 67,
+      "best_source": "hrrr"
+    },
+    {
+      "ts": "2026-04-30T12:23:09.864055+00:00",
+      "horizon": "D+2",
+      "hours_left": 47.6,
+      "ecmwf": 62,
+      "hrrr": 68,
+      "metar": null,
+      "best": 68,
+      "best_source": "hrrr"
+    },
+    {
+      "ts": "2026-04-30T13:23:58.798177+00:00",
+      "horizon": "D+2",
+      "hours_left": 46.6,
+      "ecmwf": 62,
+      "hrrr": 68,
+      "metar": null,
+      "best": 68,
+      "best_source": "hrrr"
+    },
+    {
+      "ts": "2026-04-30T14:24:47.126128+00:00",
+      "horizon": "D+2",
+      "hours_left": 45.6,
+      "ecmwf": 63,
+      "hrrr": 68,
+      "metar": null,
+      "best": 68,
+      "best_source": "hrrr"
+    },
+    {
+      "ts": "2026-04-30T15:25:41.650558+00:00",
+      "horizon": "D+2",
+      "hours_left": 44.6,
+      "ecmwf": 63,
+      "hrrr": 68,
+      "metar": null,
+      "best": 68,
+      "best_source": "hrrr"
+    }
+  ],
+  "market_snapshots": [
+    {
+      "ts": "2026-04-30T05:03:55.197368+00:00",
+      "top_bucket": "66.0-67.0F",
+      "top_price": 0.295
+    },
+    {
+      "ts": "2026-04-30T06:04:41.587920+00:00",
+      "top_bucket": "66.0-67.0F",
+      "top_price": 0.175
+    },
+    {
+      "ts": "2026-04-30T07:05:27.962653+00:00",
+      "top_bucket": "66.0-67.0F",
+      "top_price": 0.185
+    },
+    {
+      "ts": "2026-04-30T08:06:39.326327+00:00",
+      "top_bucket": "64.0-65.0F",
+      "top_price": 0.195
+    },
+    {
+      "ts": "2026-04-30T09:08:02.175693+00:00",
+      "top_bucket": "66.0-67.0F",
+      "top_price": 0.245
+    },
+    {
+      "ts": "2026-04-30T11:22:18.506422+00:00",
+      "top_bucket": "64.0-65.0F",
+      "top_price": 0.27
+    },
+    {
+      "ts": "2026-04-30T12:23:09.864055+00:00",
+      "top_bucket": "64.0-65.0F",
+      "top_price": 0.295
+    },
+    {
+      "ts": "2026-04-30T13:23:58.798177+00:00",
+      "top_bucket": "64.0-65.0F",
+      "top_price": 0.305
+    },
+    {
+      "ts": "2026-04-30T14:24:47.126128+00:00",
+      "top_bucket": "64.0-65.0F",
+      "top_price": 0.305
+    },
+    {
+      "ts": "2026-04-30T15:25:41.650558+00:00",
+      "top_bucket": "66.0-67.0F",
+      "top_price": 0.335
+    }
+  ],
+  "all_outcomes": [
+    {
+      "question": "Will the highest temperature in Atlanta be 59°F or below on May 2?",
+      "market_id": "2122259",
+      "range": [
+        -999.0,
+        59.0
+      ],
+      "bid": 0.0095,
+      "ask": 0.0095,
+      "price": 0.0095,
+      "spread": 0.0,
+      "volume": 1074.0
+    },
+    {
+      "question": "Will the highest temperature in Atlanta be between 60-61°F on May 2?",
+      "market_id": "2122260",
+      "range": [
+        60.0,
+        61.0
+      ],
+      "bid": 0.05,
+      "ask": 0.05,
+      "price": 0.05,
+      "spread": 0.0,
+      "volume": 250.0
+    },
+    {
+      "question": "Will the highest temperature in Atlanta be between 62-63°F on May 2?",
+      "market_id": "2122261",
+      "range": [
+        62.0,
+        63.0
+      ],
+      "bid": 0.145,
+      "ask": 0.145,
+      "price": 0.145,
+      "spread": 0.0,
+      "volume": 244.0
+    },
+    {
+      "question": "Will the highest temperature in Atlanta be between 64-65°F on May 2?",
+      "market_id": "2122262",
+      "range": [
+        64.0,
+        65.0
+      ],
+      "bid": 0.305,
+      "ask": 0.305,
+      "price": 0.305,
+      "spread": 0.0,
+      "volume": 706.0
+    },
+    {
+      "question": "Will the highest temperature in Atlanta be between 66-67°F on May 2?",
+      "market_id": "2122263",
+      "range": [
+        66.0,
+        67.0
+      ],
+      "bid": 0.335,
+      "ask": 0.335,
+      "price": 0.335,
+      "spread": 0.0,
+      "volume": 567.0
+    },
+    {
+      "question": "Will the highest temperature in Atlanta be between 68-69°F on May 2?",
+      "market_id": "2122264",
+      "range": [
+        68.0,
+        69.0
+      ],
+      "bid": 0.135,
+      "ask": 0.135,
+      "price": 0.135,
+      "spread": 0.0,
+      "volume": 154.0
+    },
+    {
+      "question": "Will the highest temperature in Atlanta be between 70-71°F on May 2?",
+      "market_id": "2122265",
+      "range": [
+        70.0,
+        71.0
+      ],
+      "bid": 0.0585,
+      "ask": 0.0585,
+      "price": 0.0585,
+      "spread": 0.0,
+      "volume": 379.0
+    },
+    {
+      "question": "Will the highest temperature in Atlanta be between 72-73°F on May 2?",
+      "market_id": "2122266",
+      "range": [
+        72.0,
+        73.0
+      ],
+      "bid": 0.015,
+      "ask": 0.015,
+      "price": 0.015,
+      "spread": 0.0,
+      "volume": 291.0
+    },
+    {
+      "question": "Will the highest temperature in Atlanta be between 74-75°F on May 2?",
+      "market_id": "2122267",
+      "range": [
+        74.0,
+        75.0
+      ],
+      "bid": 0.0055,
+      "ask": 0.0055,
+      "price": 0.0055,
+      "spread": 0.0,
+      "volume": 881.0
+    },
+    {
+      "question": "Will the highest temperature in Atlanta be between 76-77°F on May 2?",
+      "market_id": "2122268",
+      "range": [
+        76.0,
+        77.0
+      ],
+      "bid": 0.006,
+      "ask": 0.006,
+      "price": 0.006,
+      "spread": 0.0,
+      "volume": 382.0
+    },
+    {
+      "question": "Will the highest temperature in Atlanta be 78°F or higher on May 2?",
+      "market_id": "2122269",
+      "range": [
+        78.0,
+        999.0
+      ],
+      "bid": 0.0035,
+      "ask": 0.0035,
+      "price": 0.0035,
+      "spread": 0.0,
+      "volume": 430.0
+    }
+  ],
+  "created_at": "2026-04-30T05:03:57.742792+00:00"
+}

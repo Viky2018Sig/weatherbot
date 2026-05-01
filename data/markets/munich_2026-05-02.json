@@ -1,0 +1,314 @@
+{
+  "city": "munich",
+  "city_name": "Munich",
+  "date": "2026-05-02",
+  "unit": "C",
+  "station": "EDDM",
+  "event_end_date": "2026-05-02T12:00:00Z",
+  "hours_at_discovery": 54.9,
+  "status": "open",
+  "position": null,
+  "actual_temp": null,
+  "resolved_outcome": null,
+  "pnl": null,
+  "forecast_snapshots": [
+    {
+      "ts": "2026-04-30T05:04:02.300979+00:00",
+      "horizon": "D+2",
+      "hours_left": 54.9,
+      "ecmwf": 22.5,
+      "hrrr": null,
+      "metar": null,
+      "best": 22.5,
+      "best_source": "ecmwf"
+    },
+    {
+      "ts": "2026-04-30T06:04:47.432507+00:00",
+      "horizon": "D+2",
+      "hours_left": 53.9,
+      "ecmwf": 22.5,
+      "hrrr": null,
+      "metar": null,
+      "best": 22.5,
+      "best_source": "ecmwf"
+    },
+    {
+      "ts": "2026-04-30T07:05:36.910665+00:00",
+      "horizon": "D+2",
+      "hours_left": 52.9,
+      "ecmwf": 22.5,
+      "hrrr": null,
+      "metar": null,
+      "best": 22.5,
+      "best_source": "ecmwf"
+    },
+    {
+      "ts": "2026-04-30T08:06:46.041919+00:00",
+      "horizon": "D+2",
+      "hours_left": 51.9,
+      "ecmwf": 22.5,
+      "hrrr": null,
+      "metar": null,
+      "best": 22.5,
+      "best_source": "ecmwf"
+    },
+    {
+      "ts": "2026-04-30T09:08:09.861964+00:00",
+      "horizon": "D+2",
+      "hours_left": 50.9,
+      "ecmwf": 22.5,
+      "hrrr": null,
+      "metar": null,
+      "best": 22.5,
+      "best_source": "ecmwf"
+    },
+    {
+      "ts": "2026-04-30T11:22:25.919358+00:00",
+      "horizon": "D+2",
+      "hours_left": 48.6,
+      "ecmwf": 22.5,
+      "hrrr": null,
+      "metar": null,
+      "best": 22.5,
+      "best_source": "ecmwf"
+    },
+    {
+      "ts": "2026-04-30T12:23:16.753939+00:00",
+      "horizon": "D+2",
+      "hours_left": 47.6,
+      "ecmwf": 22.5,
+      "hrrr": null,
+      "metar": null,
+      "best": 22.5,
+      "best_source": "ecmwf"
+    },
+    {
+      "ts": "2026-04-30T13:24:06.713652+00:00",
+      "horizon": "D+2",
+      "hours_left": 46.6,
+      "ecmwf": 22.5,
+      "hrrr": null,
+      "metar": null,
+      "best": 22.5,
+      "best_source": "ecmwf"
+    },
+    {
+      "ts": "2026-04-30T14:24:54.535852+00:00",
+      "horizon": "D+2",
+      "hours_left": 45.6,
+      "ecmwf": 22.6,
+      "hrrr": null,
+      "metar": null,
+      "best": 22.6,
+      "best_source": "ecmwf"
+    },
+    {
+      "ts": "2026-04-30T15:25:47.384158+00:00",
+      "horizon": "D+2",
+      "hours_left": 44.6,
+      "ecmwf": 22.6,
+      "hrrr": null,
+      "metar": null,
+      "best": 22.6,
+      "best_source": "ecmwf"
+    }
+  ],
+  "market_snapshots": [
+    {
+      "ts": "2026-04-30T05:04:02.300979+00:00",
+      "top_bucket": "25.0-25.0C",
+      "top_price": 0.32
+    },
+    {
+      "ts": "2026-04-30T06:04:47.432507+00:00",
+      "top_bucket": "25.0-25.0C",
+      "top_price": 0.32
+    },
+    {
+      "ts": "2026-04-30T07:05:36.910665+00:00",
+      "top_bucket": "24.0-24.0C",
+      "top_price": 0.29
+    },
+    {
+      "ts": "2026-04-30T08:06:46.041919+00:00",
+      "top_bucket": "24.0-24.0C",
+      "top_price": 0.29
+    },
+    {
+      "ts": "2026-04-30T09:08:09.861964+00:00",
+      "top_bucket": "24.0-24.0C",
+      "top_price": 0.305
+    },
+    {
+      "ts": "2026-04-30T11:22:25.919358+00:00",
+      "top_bucket": "24.0-24.0C",
+      "top_price": 0.295
+    },
+    {
+      "ts": "2026-04-30T12:23:16.753939+00:00",
+      "top_bucket": "24.0-24.0C",
+      "top_price": 0.295
+    },
+    {
+      "ts": "2026-04-30T13:24:06.713652+00:00",
+      "top_bucket": "24.0-24.0C",
+      "top_price": 0.305
+    },
+    {
+      "ts": "2026-04-30T14:24:54.535852+00:00",
+      "top_bucket": "24.0-24.0C",
+      "top_price": 0.295
+    },
+    {
+      "ts": "2026-04-30T15:25:47.384158+00:00",
+      "top_bucket": "24.0-24.0C",
+      "top_price": 0.305
+    }
+  ],
+  "all_outcomes": [
+    {
+      "question": "Will the highest temperature in Munich be 16°C or below on May 2?",
+      "market_id": "2122325",
+      "range": [
+        -999.0,
+        16.0
+      ],
+      "bid": 0.002,
+      "ask": 0.002,
+      "price": 0.002,
+      "spread": 0.0,
+      "volume": 230.0
+    },
+    {
+      "question": "Will the highest temperature in Munich be 17°C on May 2?",
+      "market_id": "2122326",
+      "range": [
+        17.0,
+        17.0
+      ],
+      "bid": 0.0035,
+      "ask": 0.0035,
+      "price": 0.0035,
+      "spread": 0.0,
+      "volume": 226.0
+    },
+    {
+      "question": "Will the highest temperature in Munich be 18°C on May 2?",
+      "market_id": "2122327",
+      "range": [
+        18.0,
+        18.0
+      ],
+      "bid": 0.002,
+      "ask": 0.002,
+      "price": 0.002,
+      "spread": 0.0,
+      "volume": 729.0
+    },
+    {
+      "question": "Will the highest temperature in Munich be 19°C on May 2?",
+      "market_id": "2122328",
+      "range": [
+        19.0,
+        19.0
+      ],
+      "bid": 0.004,
+      "ask": 0.004,
+      "price": 0.004,
+      "spread": 0.0,
+      "volume": 914.0
+    },
+    {
+      "question": "Will the highest temperature in Munich be 20°C on May 2?",
+      "market_id": "2122329",
+      "range": [
+        20.0,
+        20.0
+      ],
+      "bid": 0.0075,
+      "ask": 0.0075,
+      "price": 0.0075,
+      "spread": 0.0,
+      "volume": 752.0
+    },
+    {
+      "question": "Will the highest temperature in Munich be 21°C on May 2?",
+      "market_id": "2122330",
+      "range": [
+        21.0,
+        21.0
+      ],
+      "bid": 0.0095,
+      "ask": 0.0095,
+      "price": 0.0095,
+      "spread": 0.0,
+      "volume": 948.0
+    },
+    {
+      "question": "Will the highest temperature in Munich be 22°C on May 2?",
+      "market_id": "2122331",
+      "range": [
+        22.0,
+        22.0
+      ],
+      "bid": 0.0405,
+      "ask": 0.0405,
+      "price": 0.0405,
+      "spread": 0.0,
+      "volume": 818.0
+    },
+    {
+      "question": "Will the highest temperature in Munich be 23°C on May 2?",
+      "market_id": "2122332",
+      "range": [
+        23.0,
+        23.0
+      ],
+      "bid": 0.065,
+      "ask": 0.065,
+      "price": 0.065,
+      "spread": 0.0,
+      "volume": 672.0
+    },
+    {
+      "question": "Will the highest temperature in Munich be 24°C on May 2?",
+      "market_id": "2122333",
+      "range": [
+        24.0,
+        24.0
+      ],
+      "bid": 0.305,
+      "ask": 0.305,
+      "price": 0.305,
+      "spread": 0.0,
+      "volume": 442.0
+    },
+    {
+      "question": "Will the highest temperature in Munich be 25°C on May 2?",
+      "market_id": "2122334",
+      "range": [
+        25.0,
+        25.0
+      ],
+      "bid": 0.305,
+      "ask": 0.305,
+      "price": 0.305,
+      "spread": 0.0,
+      "volume": 455.0
+    },
+    {
+      "question": "Will the highest temperature in Munich be 26°C or higher on May 2?",
+      "market_id": "2122335",
+      "range": [
+        26.0,
+        999.0
+      ],
+      "bid": 0.2145,
+      "ask": 0.2145,
+      "price": 0.2145,
+      "spread": 0.0,
+      "volume": 415.0
+    }
+  ],
+  "created_at": "2026-04-30T05:04:03.710746+00:00"
+}

@@ -1,0 +1,314 @@
+{
+  "city": "nyc",
+  "city_name": "New York City",
+  "date": "2026-05-02",
+  "unit": "F",
+  "station": "KLGA",
+  "event_end_date": "2026-05-02T12:00:00Z",
+  "hours_at_discovery": 54.9,
+  "status": "open",
+  "position": null,
+  "actual_temp": null,
+  "resolved_outcome": null,
+  "pnl": null,
+  "forecast_snapshots": [
+    {
+      "ts": "2026-04-30T05:03:40.579625+00:00",
+      "horizon": "D+2",
+      "hours_left": 54.9,
+      "ecmwf": 58,
+      "hrrr": 62,
+      "metar": null,
+      "best": 62,
+      "best_source": "hrrr"
+    },
+    {
+      "ts": "2026-04-30T06:04:28.413132+00:00",
+      "horizon": "D+2",
+      "hours_left": 53.9,
+      "ecmwf": 58,
+      "hrrr": 55,
+      "metar": null,
+      "best": 55,
+      "best_source": "hrrr"
+    },
+    {
+      "ts": "2026-04-30T07:05:13.196122+00:00",
+      "horizon": "D+2",
+      "hours_left": 52.9,
+      "ecmwf": 58,
+      "hrrr": 55,
+      "metar": null,
+      "best": 55,
+      "best_source": "hrrr"
+    },
+    {
+      "ts": "2026-04-30T08:06:08.831655+00:00",
+      "horizon": "D+2",
+      "hours_left": 51.9,
+      "ecmwf": 58,
+      "hrrr": 53,
+      "metar": null,
+      "best": 53,
+      "best_source": "hrrr"
+    },
+    {
+      "ts": "2026-04-30T09:07:48.664975+00:00",
+      "horizon": "D+2",
+      "hours_left": 50.9,
+      "ecmwf": 60,
+      "hrrr": 53,
+      "metar": null,
+      "best": 53,
+      "best_source": "hrrr"
+    },
+    {
+      "ts": "2026-04-30T11:22:01.950414+00:00",
+      "horizon": "D+2",
+      "hours_left": 48.6,
+      "ecmwf": 60,
+      "hrrr": 53,
+      "metar": null,
+      "best": 53,
+      "best_source": "hrrr"
+    },
+    {
+      "ts": "2026-04-30T12:22:55.146264+00:00",
+      "horizon": "D+2",
+      "hours_left": 47.6,
+      "ecmwf": 60,
+      "hrrr": 57,
+      "metar": null,
+      "best": 57,
+      "best_source": "hrrr"
+    },
+    {
+      "ts": "2026-04-30T13:23:44.831000+00:00",
+      "horizon": "D+2",
+      "hours_left": 46.6,
+      "ecmwf": 60,
+      "hrrr": 57,
+      "metar": null,
+      "best": 57,
+      "best_source": "hrrr"
+    },
+    {
+      "ts": "2026-04-30T14:24:33.025658+00:00",
+      "horizon": "D+2",
+      "hours_left": 45.6,
+      "ecmwf": 62,
+      "hrrr": 57,
+      "metar": null,
+      "best": 57,
+      "best_source": "hrrr"
+    },
+    {
+      "ts": "2026-04-30T15:25:27.270801+00:00",
+      "horizon": "D+2",
+      "hours_left": 44.6,
+      "ecmwf": 62,
+      "hrrr": 57,
+      "metar": null,
+      "best": 57,
+      "best_source": "hrrr"
+    }
+  ],
+  "market_snapshots": [
+    {
+      "ts": "2026-04-30T05:03:40.579625+00:00",
+      "top_bucket": "58.0-59.0F",
+      "top_price": 0.315
+    },
+    {
+      "ts": "2026-04-30T06:04:28.413132+00:00",
+      "top_bucket": "60.0-61.0F",
+      "top_price": 0.36
+    },
+    {
+      "ts": "2026-04-30T07:05:13.196122+00:00",
+      "top_bucket": "58.0-59.0F",
+      "top_price": 0.275
+    },
+    {
+      "ts": "2026-04-30T08:06:08.831655+00:00",
+      "top_bucket": "58.0-59.0F",
+      "top_price": 0.31
+    },
+    {
+      "ts": "2026-04-30T09:07:48.664975+00:00",
+      "top_bucket": "58.0-59.0F",
+      "top_price": 0.31
+    },
+    {
+      "ts": "2026-04-30T11:22:01.950414+00:00",
+      "top_bucket": "60.0-61.0F",
+      "top_price": 0.26
+    },
+    {
+      "ts": "2026-04-30T12:22:55.146264+00:00",
+      "top_bucket": "58.0-59.0F",
+      "top_price": 0.3
+    },
+    {
+      "ts": "2026-04-30T13:23:44.831000+00:00",
+      "top_bucket": "58.0-59.0F",
+      "top_price": 0.32
+    },
+    {
+      "ts": "2026-04-30T14:24:33.025658+00:00",
+      "top_bucket": "58.0-59.0F",
+      "top_price": 0.33
+    },
+    {
+      "ts": "2026-04-30T15:25:27.270801+00:00",
+      "top_bucket": "58.0-59.0F",
+      "top_price": 0.34
+    }
+  ],
+  "all_outcomes": [
+    {
+      "question": "Will the highest temperature in New York City be 51°F or below on May 2?",
+      "market_id": "2122237",
+      "range": [
+        -999.0,
+        51.0
+      ],
+      "bid": 0.006,
+      "ask": 0.006,
+      "price": 0.006,
+      "spread": 0.0,
+      "volume": 3580.0
+    },
+    {
+      "question": "Will the highest temperature in New York City be between 52-53°F on May 2?",
+      "market_id": "2122238",
+      "range": [
+        52.0,
+        53.0
+      ],
+      "bid": 0.015,
+      "ask": 0.015,
+      "price": 0.015,
+      "spread": 0.0,
+      "volume": 355.0
+    },
+    {
+      "question": "Will the highest temperature in New York City be between 54-55°F on May 2?",
+      "market_id": "2122239",
+      "range": [
+        54.0,
+        55.0
+      ],
+      "bid": 0.0575,
+      "ask": 0.0575,
+      "price": 0.0575,
+      "spread": 0.0,
+      "volume": 246.0
+    },
+    {
+      "question": "Will the highest temperature in New York City be between 56-57°F on May 2?",
+      "market_id": "2122240",
+      "range": [
+        56.0,
+        57.0
+      ],
+      "bid": 0.12,
+      "ask": 0.12,
+      "price": 0.12,
+      "spread": 0.0,
+      "volume": 351.0
+    },
+    {
+      "question": "Will the highest temperature in New York City be between 58-59°F on May 2?",
+      "market_id": "2122241",
+      "range": [
+        58.0,
+        59.0
+      ],
+      "bid": 0.34,
+      "ask": 0.34,
+      "price": 0.34,
+      "spread": 0.0,
+      "volume": 345.0
+    },
+    {
+      "question": "Will the highest temperature in New York City be between 60-61°F on May 2?",
+      "market_id": "2122242",
+      "range": [
+        60.0,
+        61.0
+      ],
+      "bid": 0.285,
+      "ask": 0.285,
+      "price": 0.285,
+      "spread": 0.0,
+      "volume": 188.0
+    },
+    {
+      "question": "Will the highest temperature in New York City be between 62-63°F on May 2?",
+      "market_id": "2122243",
+      "range": [
+        62.0,
+        63.0
+      ],
+      "bid": 0.1875,
+      "ask": 0.1875,
+      "price": 0.1875,
+      "spread": 0.0,
+      "volume": 196.0
+    },
+    {
+      "question": "Will the highest temperature in New York City be between 64-65°F on May 2?",
+      "market_id": "2122244",
+      "range": [
+        64.0,
+        65.0
+      ],
+      "bid": 0.032,
+      "ask": 0.032,
+      "price": 0.032,
+      "spread": 0.0,
+      "volume": 183.0
+    },
+    {
+      "question": "Will the highest temperature in New York City be between 66-67°F on May 2?",
+      "market_id": "2122245",
+      "range": [
+        66.0,
+        67.0
+      ],
+      "bid": 0.0095,
+      "ask": 0.0095,
+      "price": 0.0095,
+      "spread": 0.0,
+      "volume": 499.0
+    },
+    {
+      "question": "Will the highest temperature in New York City be between 68-69°F on May 2?",
+      "market_id": "2122246",
+      "range": [
+        68.0,
+        69.0
+      ],
+      "bid": 0.0025,
+      "ask": 0.0025,
+      "price": 0.0025,
+      "spread": 0.0,
+      "volume": 526.0
+    },
+    {
+      "question": "Will the highest temperature in New York City be 70°F or higher on May 2?",
+      "market_id": "2122247",
+      "range": [
+        70.0,
+        999.0
+      ],
+      "bid": 0.005,
+      "ask": 0.005,
+      "price": 0.005,
+      "spread": 0.0,
+      "volume": 216.0
+    }
+  ],
+  "created_at": "2026-04-30T05:03:43.090049+00:00"
+}

@@ -1,0 +1,314 @@
+{
+  "city": "miami",
+  "city_name": "Miami",
+  "date": "2026-05-02",
+  "unit": "F",
+  "station": "KMIA",
+  "event_end_date": "2026-05-02T12:00:00Z",
+  "hours_at_discovery": 54.9,
+  "status": "open",
+  "position": null,
+  "actual_temp": null,
+  "resolved_outcome": null,
+  "pnl": null,
+  "forecast_snapshots": [
+    {
+      "ts": "2026-04-30T05:03:46.675002+00:00",
+      "horizon": "D+2",
+      "hours_left": 54.9,
+      "ecmwf": 90,
+      "hrrr": 95,
+      "metar": null,
+      "best": 95,
+      "best_source": "hrrr"
+    },
+    {
+      "ts": "2026-04-30T06:04:33.508972+00:00",
+      "horizon": "D+2",
+      "hours_left": 53.9,
+      "ecmwf": 90,
+      "hrrr": 95,
+      "metar": null,
+      "best": 95,
+      "best_source": "hrrr"
+    },
+    {
+      "ts": "2026-04-30T07:05:19.057040+00:00",
+      "horizon": "D+2",
+      "hours_left": 52.9,
+      "ecmwf": 90,
+      "hrrr": 95,
+      "metar": null,
+      "best": 95,
+      "best_source": "hrrr"
+    },
+    {
+      "ts": "2026-04-30T08:06:30.024070+00:00",
+      "horizon": "D+2",
+      "hours_left": 51.9,
+      "ecmwf": 90,
+      "hrrr": 95,
+      "metar": null,
+      "best": 95,
+      "best_source": "hrrr"
+    },
+    {
+      "ts": "2026-04-30T09:07:54.589538+00:00",
+      "horizon": "D+2",
+      "hours_left": 50.9,
+      "ecmwf": 90,
+      "hrrr": 95,
+      "metar": null,
+      "best": 95,
+      "best_source": "hrrr"
+    },
+    {
+      "ts": "2026-04-30T11:22:09.061356+00:00",
+      "horizon": "D+2",
+      "hours_left": 48.6,
+      "ecmwf": 90,
+      "hrrr": 95,
+      "metar": null,
+      "best": 95,
+      "best_source": "hrrr"
+    },
+    {
+      "ts": "2026-04-30T12:23:01.975866+00:00",
+      "horizon": "D+2",
+      "hours_left": 47.6,
+      "ecmwf": 90,
+      "hrrr": 95,
+      "metar": null,
+      "best": 95,
+      "best_source": "hrrr"
+    },
+    {
+      "ts": "2026-04-30T13:23:50.719057+00:00",
+      "horizon": "D+2",
+      "hours_left": 46.6,
+      "ecmwf": 90,
+      "hrrr": 95,
+      "metar": null,
+      "best": 95,
+      "best_source": "hrrr"
+    },
+    {
+      "ts": "2026-04-30T14:24:38.853107+00:00",
+      "horizon": "D+2",
+      "hours_left": 45.6,
+      "ecmwf": 90,
+      "hrrr": 95,
+      "metar": null,
+      "best": 95,
+      "best_source": "hrrr"
+    },
+    {
+      "ts": "2026-04-30T15:25:33.448026+00:00",
+      "horizon": "D+2",
+      "hours_left": 44.6,
+      "ecmwf": 90,
+      "hrrr": 95,
+      "metar": null,
+      "best": 95,
+      "best_source": "hrrr"
+    }
+  ],
+  "market_snapshots": [
+    {
+      "ts": "2026-04-30T05:03:46.675002+00:00",
+      "top_bucket": "92.0-93.0F",
+      "top_price": 0.395
+    },
+    {
+      "ts": "2026-04-30T06:04:33.508972+00:00",
+      "top_bucket": "92.0-93.0F",
+      "top_price": 0.365
+    },
+    {
+      "ts": "2026-04-30T07:05:19.057040+00:00",
+      "top_bucket": "92.0-93.0F",
+      "top_price": 0.325
+    },
+    {
+      "ts": "2026-04-30T08:06:30.024070+00:00",
+      "top_bucket": "92.0-93.0F",
+      "top_price": 0.35
+    },
+    {
+      "ts": "2026-04-30T09:07:54.589538+00:00",
+      "top_bucket": "92.0-93.0F",
+      "top_price": 0.34
+    },
+    {
+      "ts": "2026-04-30T11:22:09.061356+00:00",
+      "top_bucket": "92.0-93.0F",
+      "top_price": 0.37
+    },
+    {
+      "ts": "2026-04-30T12:23:01.975866+00:00",
+      "top_bucket": "92.0-93.0F",
+      "top_price": 0.39
+    },
+    {
+      "ts": "2026-04-30T13:23:50.719057+00:00",
+      "top_bucket": "92.0-93.0F",
+      "top_price": 0.39
+    },
+    {
+      "ts": "2026-04-30T14:24:38.853107+00:00",
+      "top_bucket": "92.0-93.0F",
+      "top_price": 0.38
+    },
+    {
+      "ts": "2026-04-30T15:25:33.448026+00:00",
+      "top_bucket": "92.0-93.0F",
+      "top_price": 0.38
+    }
+  ],
+  "all_outcomes": [
+    {
+      "question": "Will the highest temperature in Miami be 83°F or below on May 2?",
+      "market_id": "2122270",
+      "range": [
+        -999.0,
+        83.0
+      ],
+      "bid": 0.0055,
+      "ask": 0.0055,
+      "price": 0.0055,
+      "spread": 0.0,
+      "volume": 1025.0
+    },
+    {
+      "question": "Will the highest temperature in Miami be between 84-85°F on May 2?",
+      "market_id": "2122271",
+      "range": [
+        84.0,
+        85.0
+      ],
+      "bid": 0.0085,
+      "ask": 0.0085,
+      "price": 0.0085,
+      "spread": 0.0,
+      "volume": 856.0
+    },
+    {
+      "question": "Will the highest temperature in Miami be between 86-87°F on May 2?",
+      "market_id": "2122272",
+      "range": [
+        86.0,
+        87.0
+      ],
+      "bid": 0.0145,
+      "ask": 0.0145,
+      "price": 0.0145,
+      "spread": 0.0,
+      "volume": 844.0
+    },
+    {
+      "question": "Will the highest temperature in Miami be between 88-89°F on May 2?",
+      "market_id": "2122273",
+      "range": [
+        88.0,
+        89.0
+      ],
+      "bid": 0.06,
+      "ask": 0.06,
+      "price": 0.06,
+      "spread": 0.0,
+      "volume": 364.0
+    },
+    {
+      "question": "Will the highest temperature in Miami be between 90-91°F on May 2?",
+      "market_id": "2122274",
+      "range": [
+        90.0,
+        91.0
+      ],
+      "bid": 0.335,
+      "ask": 0.335,
+      "price": 0.335,
+      "spread": 0.0,
+      "volume": 332.0
+    },
+    {
+      "question": "Will the highest temperature in Miami be between 92-93°F on May 2?",
+      "market_id": "2122275",
+      "range": [
+        92.0,
+        93.0
+      ],
+      "bid": 0.38,
+      "ask": 0.38,
+      "price": 0.38,
+      "spread": 0.0,
+      "volume": 646.0
+    },
+    {
+      "question": "Will the highest temperature in Miami be between 94-95°F on May 2?",
+      "market_id": "2122276",
+      "range": [
+        94.0,
+        95.0
+      ],
+      "bid": 0.189,
+      "ask": 0.189,
+      "price": 0.189,
+      "spread": 0.0,
+      "volume": 482.0
+    },
+    {
+      "question": "Will the highest temperature in Miami be between 96-97°F on May 2?",
+      "market_id": "2122277",
+      "range": [
+        96.0,
+        97.0
+      ],
+      "bid": 0.0385,
+      "ask": 0.0385,
+      "price": 0.0385,
+      "spread": 0.0,
+      "volume": 391.0
+    },
+    {
+      "question": "Will the highest temperature in Miami be between 98-99°F on May 2?",
+      "market_id": "2122278",
+      "range": [
+        98.0,
+        99.0
+      ],
+      "bid": 0.015,
+      "ask": 0.015,
+      "price": 0.015,
+      "spread": 0.0,
+      "volume": 432.0
+    },
+    {
+      "question": "Will the highest temperature in Miami be between 100-101°F on May 2?",
+      "market_id": "2122279",
+      "range": [
+        100.0,
+        101.0
+      ],
+      "bid": 0.005,
+      "ask": 0.005,
+      "price": 0.005,
+      "spread": 0.0,
+      "volume": 317.0
+    },
+    {
+      "question": "Will the highest temperature in Miami be 102°F or higher on May 2?",
+      "market_id": "2122280",
+      "range": [
+        102.0,
+        999.0
+      ],
+      "bid": 0.002,
+      "ask": 0.002,
+      "price": 0.002,
+      "spread": 0.0,
+      "volume": 923.0
+    }
+  ],
+  "created_at": "2026-04-30T05:03:49.533251+00:00"
+}

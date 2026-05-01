@@ -1,0 +1,659 @@
+{
+  "city": "buenos-aires",
+  "city_name": "Buenos Aires",
+  "date": "2026-04-28",
+  "unit": "C",
+  "station": "SAEZ",
+  "event_end_date": "2026-04-28T12:00:00Z",
+  "hours_at_discovery": 21.0,
+  "status": "closed",
+  "position": null,
+  "actual_temp": null,
+  "resolved_outcome": null,
+  "pnl": null,
+  "forecast_snapshots": [
+    {
+      "ts": "2026-04-27T14:59:02.142935+00:00",
+      "horizon": "D+1",
+      "hours_left": 21.0,
+      "ecmwf": 18.2,
+      "hrrr": null,
+      "metar": null,
+      "best": 18.2,
+      "best_source": "ecmwf"
+    },
+    {
+      "ts": "2026-04-27T16:33:42.025698+00:00",
+      "horizon": "D+1",
+      "hours_left": 19.4,
+      "ecmwf": 18.2,
+      "hrrr": null,
+      "metar": null,
+      "best": 18.2,
+      "best_source": "ecmwf"
+    },
+    {
+      "ts": "2026-04-27T17:34:30.646143+00:00",
+      "horizon": "D+1",
+      "hours_left": 18.4,
+      "ecmwf": 18.2,
+      "hrrr": null,
+      "metar": null,
+      "best": 18.2,
+      "best_source": "ecmwf"
+    },
+    {
+      "ts": "2026-04-27T18:35:15.857824+00:00",
+      "horizon": "D+1",
+      "hours_left": 17.4,
+      "ecmwf": 18.2,
+      "hrrr": null,
+      "metar": null,
+      "best": 18.2,
+      "best_source": "ecmwf"
+    },
+    {
+      "ts": "2026-04-27T19:36:03.169679+00:00",
+      "horizon": "D+1",
+      "hours_left": 16.4,
+      "ecmwf": 18.2,
+      "hrrr": null,
+      "metar": null,
+      "best": 18.2,
+      "best_source": "ecmwf"
+    },
+    {
+      "ts": "2026-04-27T20:36:48.852621+00:00",
+      "horizon": "D+1",
+      "hours_left": 15.4,
+      "ecmwf": 18.5,
+      "hrrr": null,
+      "metar": null,
+      "best": 18.5,
+      "best_source": "ecmwf"
+    },
+    {
+      "ts": "2026-04-27T21:37:36.969232+00:00",
+      "horizon": "D+1",
+      "hours_left": 14.4,
+      "ecmwf": 18.5,
+      "hrrr": null,
+      "metar": null,
+      "best": 18.5,
+      "best_source": "ecmwf"
+    },
+    {
+      "ts": "2026-04-27T22:38:25.714845+00:00",
+      "horizon": "D+1",
+      "hours_left": 13.4,
+      "ecmwf": 18.5,
+      "hrrr": null,
+      "metar": null,
+      "best": 18.5,
+      "best_source": "ecmwf"
+    },
+    {
+      "ts": "2026-04-27T23:39:10.344915+00:00",
+      "horizon": "D+1",
+      "hours_left": 12.3,
+      "ecmwf": 18.5,
+      "hrrr": null,
+      "metar": null,
+      "best": 18.5,
+      "best_source": "ecmwf"
+    },
+    {
+      "ts": "2026-04-28T00:39:56.303910+00:00",
+      "horizon": "D+0",
+      "hours_left": 11.3,
+      "ecmwf": 18.5,
+      "hrrr": null,
+      "metar": 7.0,
+      "best": 18.5,
+      "best_source": "ecmwf"
+    },
+    {
+      "ts": "2026-04-28T01:40:56.192566+00:00",
+      "horizon": "D+0",
+      "hours_left": 10.3,
+      "ecmwf": 18.5,
+      "hrrr": null,
+      "metar": 7.0,
+      "best": 18.5,
+      "best_source": "ecmwf"
+    },
+    {
+      "ts": "2026-04-28T02:41:46.060163+00:00",
+      "horizon": "D+0",
+      "hours_left": 9.3,
+      "ecmwf": 18.5,
+      "hrrr": null,
+      "metar": 6.0,
+      "best": 18.5,
+      "best_source": "ecmwf"
+    },
+    {
+      "ts": "2026-04-28T03:42:32.648775+00:00",
+      "horizon": "D+0",
+      "hours_left": 8.3,
+      "ecmwf": 18.5,
+      "hrrr": null,
+      "metar": 5.0,
+      "best": 18.5,
+      "best_source": "ecmwf"
+    },
+    {
+      "ts": "2026-04-28T04:43:24.477274+00:00",
+      "horizon": "D+0",
+      "hours_left": 7.3,
+      "ecmwf": 18.5,
+      "hrrr": null,
+      "metar": 4.0,
+      "best": 18.5,
+      "best_source": "ecmwf"
+    },
+    {
+      "ts": "2026-04-28T05:44:11.795298+00:00",
+      "horizon": "D+0",
+      "hours_left": 6.3,
+      "ecmwf": 18.5,
+      "hrrr": null,
+      "metar": 4.0,
+      "best": 18.5,
+      "best_source": "ecmwf"
+    },
+    {
+      "ts": "2026-04-28T06:44:59.933432+00:00",
+      "horizon": "D+0",
+      "hours_left": 5.2,
+      "ecmwf": 18.5,
+      "hrrr": null,
+      "metar": 5.0,
+      "best": 18.5,
+      "best_source": "ecmwf"
+    },
+    {
+      "ts": "2026-04-28T07:45:50.069280+00:00",
+      "horizon": "D+0",
+      "hours_left": 4.2,
+      "ecmwf": 18.5,
+      "hrrr": null,
+      "metar": 6.0,
+      "best": 18.5,
+      "best_source": "ecmwf"
+    },
+    {
+      "ts": "2026-04-28T08:46:40.407260+00:00",
+      "horizon": "D+0",
+      "hours_left": 3.2,
+      "ecmwf": 18.4,
+      "hrrr": null,
+      "metar": 7.0,
+      "best": 18.4,
+      "best_source": "ecmwf"
+    },
+    {
+      "ts": "2026-04-28T09:47:22.762409+00:00",
+      "horizon": "D+0",
+      "hours_left": 2.2,
+      "ecmwf": 18.4,
+      "hrrr": null,
+      "metar": 8.0,
+      "best": 18.4,
+      "best_source": "ecmwf"
+    },
+    {
+      "ts": "2026-04-28T10:48:07.183912+00:00",
+      "horizon": "D+0",
+      "hours_left": 1.2,
+      "ecmwf": 18.4,
+      "hrrr": null,
+      "metar": 7.0,
+      "best": 18.4,
+      "best_source": "ecmwf"
+    },
+    {
+      "ts": "2026-04-28T11:48:52.481003+00:00",
+      "horizon": "D+0",
+      "hours_left": 0.2,
+      "ecmwf": 18.4,
+      "hrrr": null,
+      "metar": 9.0,
+      "best": 18.4,
+      "best_source": "ecmwf"
+    },
+    {
+      "ts": "2026-04-28T12:49:40.450463+00:00",
+      "horizon": "D+0",
+      "hours_left": 0.0,
+      "ecmwf": 18.4,
+      "hrrr": null,
+      "metar": 11.0,
+      "best": 18.4,
+      "best_source": "ecmwf"
+    },
+    {
+      "ts": "2026-04-28T13:50:38.875743+00:00",
+      "horizon": "D+0",
+      "hours_left": 0.0,
+      "ecmwf": 17.9,
+      "hrrr": null,
+      "metar": 13.0,
+      "best": 17.9,
+      "best_source": "ecmwf"
+    },
+    {
+      "ts": "2026-04-28T14:51:27.105910+00:00",
+      "horizon": "D+0",
+      "hours_left": 0.0,
+      "ecmwf": 17.9,
+      "hrrr": null,
+      "metar": 16.0,
+      "best": 17.9,
+      "best_source": "ecmwf"
+    },
+    {
+      "ts": "2026-04-28T15:52:20.395718+00:00",
+      "horizon": "D+0",
+      "hours_left": 0.0,
+      "ecmwf": 17.9,
+      "hrrr": null,
+      "metar": 18.0,
+      "best": 17.9,
+      "best_source": "ecmwf"
+    },
+    {
+      "ts": "2026-04-28T16:53:17.102526+00:00",
+      "horizon": "D+0",
+      "hours_left": 0.0,
+      "ecmwf": 17.9,
+      "hrrr": null,
+      "metar": 19.0,
+      "best": 17.9,
+      "best_source": "ecmwf"
+    },
+    {
+      "ts": "2026-04-28T17:54:08.465921+00:00",
+      "horizon": "D+0",
+      "hours_left": 0.0,
+      "ecmwf": 17.9,
+      "hrrr": null,
+      "metar": 19.0,
+      "best": 17.9,
+      "best_source": "ecmwf"
+    },
+    {
+      "ts": "2026-04-28T18:55:02.349249+00:00",
+      "horizon": "D+0",
+      "hours_left": 0.0,
+      "ecmwf": 17.9,
+      "hrrr": null,
+      "metar": 20.0,
+      "best": 17.9,
+      "best_source": "ecmwf"
+    },
+    {
+      "ts": "2026-04-28T19:55:54.527563+00:00",
+      "horizon": "D+0",
+      "hours_left": 0.0,
+      "ecmwf": 17.9,
+      "hrrr": null,
+      "metar": 20.0,
+      "best": 17.9,
+      "best_source": "ecmwf"
+    },
+    {
+      "ts": "2026-04-28T20:57:06.899174+00:00",
+      "horizon": "D+0",
+      "hours_left": 0.0,
+      "ecmwf": 19.4,
+      "hrrr": null,
+      "metar": 20.0,
+      "best": 19.4,
+      "best_source": "ecmwf"
+    },
+    {
+      "ts": "2026-04-28T21:58:07.253543+00:00",
+      "horizon": "D+0",
+      "hours_left": 0.0,
+      "ecmwf": 19.4,
+      "hrrr": null,
+      "metar": 18.0,
+      "best": 19.4,
+      "best_source": "ecmwf"
+    },
+    {
+      "ts": "2026-04-28T22:59:03.577669+00:00",
+      "horizon": "D+0",
+      "hours_left": 0.0,
+      "ecmwf": 19.4,
+      "hrrr": null,
+      "metar": 17.0,
+      "best": 19.4,
+      "best_source": "ecmwf"
+    },
+    {
+      "ts": "2026-04-28T23:59:55.269120+00:00",
+      "horizon": "D+0",
+      "hours_left": 0.0,
+      "ecmwf": 19.4,
+      "hrrr": null,
+      "metar": 15.0,
+      "best": 19.4,
+      "best_source": "ecmwf"
+    }
+  ],
+  "market_snapshots": [
+    {
+      "ts": "2026-04-27T14:59:02.142935+00:00",
+      "top_bucket": "21.0-999.0C",
+      "top_price": 0.425
+    },
+    {
+      "ts": "2026-04-27T16:33:42.025698+00:00",
+      "top_bucket": "21.0-999.0C",
+      "top_price": 0.46
+    },
+    {
+      "ts": "2026-04-27T17:34:30.646143+00:00",
+      "top_bucket": "21.0-999.0C",
+      "top_price": 0.455
+    },
+    {
+      "ts": "2026-04-27T18:35:15.857824+00:00",
+      "top_bucket": "21.0-999.0C",
+      "top_price": 0.445
+    },
+    {
+      "ts": "2026-04-27T19:36:03.169679+00:00",
+      "top_bucket": "21.0-999.0C",
+      "top_price": 0.445
+    },
+    {
+      "ts": "2026-04-27T20:36:48.852621+00:00",
+      "top_bucket": "21.0-999.0C",
+      "top_price": 0.5
+    },
+    {
+      "ts": "2026-04-27T21:37:36.969232+00:00",
+      "top_bucket": "21.0-999.0C",
+      "top_price": 0.53
+    },
+    {
+      "ts": "2026-04-27T22:38:25.714845+00:00",
+      "top_bucket": "21.0-999.0C",
+      "top_price": 0.51
+    },
+    {
+      "ts": "2026-04-27T23:39:10.344915+00:00",
+      "top_bucket": "21.0-999.0C",
+      "top_price": 0.445
+    },
+    {
+      "ts": "2026-04-28T00:39:56.303910+00:00",
+      "top_bucket": "21.0-999.0C",
+      "top_price": 0.45
+    },
+    {
+      "ts": "2026-04-28T01:40:56.192566+00:00",
+      "top_bucket": "21.0-999.0C",
+      "top_price": 0.45
+    },
+    {
+      "ts": "2026-04-28T02:41:46.060163+00:00",
+      "top_bucket": "21.0-999.0C",
+      "top_price": 0.5
+    },
+    {
+      "ts": "2026-04-28T03:42:32.648775+00:00",
+      "top_bucket": "21.0-999.0C",
+      "top_price": 0.48
+    },
+    {
+      "ts": "2026-04-28T04:43:24.477274+00:00",
+      "top_bucket": "21.0-999.0C",
+      "top_price": 0.505
+    },
+    {
+      "ts": "2026-04-28T05:44:11.795298+00:00",
+      "top_bucket": "21.0-999.0C",
+      "top_price": 0.405
+    },
+    {
+      "ts": "2026-04-28T06:44:59.933432+00:00",
+      "top_bucket": "21.0-999.0C",
+      "top_price": 0.405
+    },
+    {
+      "ts": "2026-04-28T07:45:50.069280+00:00",
+      "top_bucket": "21.0-999.0C",
+      "top_price": 0.435
+    },
+    {
+      "ts": "2026-04-28T08:46:40.407260+00:00",
+      "top_bucket": "21.0-999.0C",
+      "top_price": 0.405
+    },
+    {
+      "ts": "2026-04-28T09:47:22.762409+00:00",
+      "top_bucket": "21.0-999.0C",
+      "top_price": 0.375
+    },
+    {
+      "ts": "2026-04-28T10:48:07.183912+00:00",
+      "top_bucket": "21.0-999.0C",
+      "top_price": 0.31
+    },
+    {
+      "ts": "2026-04-28T11:48:52.481003+00:00",
+      "top_bucket": "17.0-17.0C",
+      "top_price": 0.5005
+    },
+    {
+      "ts": "2026-04-28T12:49:40.450463+00:00",
+      "top_bucket": "15.0-15.0C",
+      "top_price": 0.475
+    },
+    {
+      "ts": "2026-04-28T13:50:38.875743+00:00",
+      "top_bucket": "19.0-19.0C",
+      "top_price": 0.43
+    },
+    {
+      "ts": "2026-04-28T14:51:27.105910+00:00",
+      "top_bucket": "21.0-999.0C",
+      "top_price": 0.38
+    },
+    {
+      "ts": "2026-04-28T15:52:20.395718+00:00",
+      "top_bucket": "20.0-20.0C",
+      "top_price": 0.435
+    },
+    {
+      "ts": "2026-04-28T16:53:17.102526+00:00",
+      "top_bucket": "21.0-999.0C",
+      "top_price": 0.62
+    },
+    {
+      "ts": "2026-04-28T17:54:08.465921+00:00",
+      "top_bucket": "20.0-20.0C",
+      "top_price": 0.785
+    },
+    {
+      "ts": "2026-04-28T18:55:02.349249+00:00",
+      "top_bucket": "21.0-999.0C",
+      "top_price": 0.64
+    },
+    {
+      "ts": "2026-04-28T19:55:54.527563+00:00",
+      "top_bucket": "20.0-20.0C",
+      "top_price": 0.925
+    },
+    {
+      "ts": "2026-04-28T20:57:06.899174+00:00",
+      "top_bucket": "20.0-20.0C",
+      "top_price": 0.9935
+    },
+    {
+      "ts": "2026-04-28T21:58:07.253543+00:00",
+      "top_bucket": "20.0-20.0C",
+      "top_price": 0.9985
+    },
+    {
+      "ts": "2026-04-28T22:59:03.577669+00:00",
+      "top_bucket": "20.0-20.0C",
+      "top_price": 0.9995
+    },
+    {
+      "ts": "2026-04-28T23:59:55.269120+00:00",
+      "top_bucket": "20.0-20.0C",
+      "top_price": 0.9995
+    }
+  ],
+  "all_outcomes": [
+    {
+      "question": "Will the highest temperature in Buenos Aires be 11°C or below on April 28?",
+      "market_id": "2082323",
+      "range": [
+        -999.0,
+        11.0
+      ],
+      "bid": 0.0,
+      "ask": 0.0,
+      "price": 0.0,
+      "spread": 0.0,
+      "volume": 3187.0
+    },
+    {
+      "question": "Will the highest temperature in Buenos Aires be 12°C on April 28?",
+      "market_id": "2082324",
+      "range": [
+        12.0,
+        12.0
+      ],
+      "bid": 0.0,
+      "ask": 0.0,
+      "price": 0.0,
+      "spread": 0.0,
+      "volume": 3824.0
+    },
+    {
+      "question": "Will the highest temperature in Buenos Aires be 13°C on April 28?",
+      "market_id": "2082325",
+      "range": [
+        13.0,
+        13.0
+      ],
+      "bid": 0.0,
+      "ask": 0.0,
+      "price": 0.0,
+      "spread": 0.0,
+      "volume": 4291.0
+    },
+    {
+      "question": "Will the highest temperature in Buenos Aires be 14°C on April 28?",
+      "market_id": "2082326",
+      "range": [
+        14.0,
+        14.0
+      ],
+      "bid": 0.0,
+      "ask": 0.0,
+      "price": 0.0,
+      "spread": 0.0,
+      "volume": 5169.0
+    },
+    {
+      "question": "Will the highest temperature in Buenos Aires be 15°C on April 28?",
+      "market_id": "2082327",
+      "range": [
+        15.0,
+        15.0
+      ],
+      "bid": 0.0,
+      "ask": 0.0,
+      "price": 0.0,
+      "spread": 0.0,
+      "volume": 4954.0
+    },
+    {
+      "question": "Will the highest temperature in Buenos Aires be 16°C on April 28?",
+      "market_id": "2082328",
+      "range": [
+        16.0,
+        16.0
+      ],
+      "bid": 0.0,
+      "ask": 0.0,
+      "price": 0.0,
+      "spread": 0.0,
+      "volume": 6370.0
+    },
+    {
+      "question": "Will the highest temperature in Buenos Aires be 17°C on April 28?",
+      "market_id": "2082329",
+      "range": [
+        17.0,
+        17.0
+      ],
+      "bid": 0.0,
+      "ask": 0.0,
+      "price": 0.0,
+      "spread": 0.0,
+      "volume": 10693.0
+    },
+    {
+      "question": "Will the highest temperature in Buenos Aires be 18°C on April 28?",
+      "market_id": "2082330",
+      "range": [
+        18.0,
+        18.0
+      ],
+      "bid": 0.0,
+      "ask": 0.0,
+      "price": 0.0,
+      "spread": 0.0,
+      "volume": 12379.0
+    },
+    {
+      "question": "Will the highest temperature in Buenos Aires be 19°C on April 28?",
+      "market_id": "2082331",
+      "range": [
+        19.0,
+        19.0
+      ],
+      "bid": 0.0,
+      "ask": 0.0,
+      "price": 0.0,
+      "spread": 0.0,
+      "volume": 17162.0
+    },
+    {
+      "question": "Will the highest temperature in Buenos Aires be 20°C on April 28?",
+      "market_id": "2082332",
+      "range": [
+        20.0,
+        20.0
+      ],
+      "bid": 0.9995,
+      "ask": 0.9995,
+      "price": 0.9995,
+      "spread": 0.0,
+      "volume": 8870.0
+    },
+    {
+      "question": "Will the highest temperature in Buenos Aires be 21°C or higher on April 28?",
+      "market_id": "2082333",
+      "range": [
+        21.0,
+        999.0
+      ],
+      "bid": 0.0005,
+      "ask": 0.0005,
+      "price": 0.0005,
+      "spread": 0.0,
+      "volume": 15727.0
+    }
+  ],
+  "created_at": "2026-04-27T14:59:04.025678+00:00"
+}

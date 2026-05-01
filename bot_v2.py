@@ -37,12 +37,17 @@ MIN_HOURS        = _cfg.get("min_hours", 2.0)
 MAX_HOURS        = _cfg.get("max_hours", 72.0)
 KELLY_FRACTION   = _cfg.get("kelly_fraction", 0.25)
 MAX_SLIPPAGE     = _cfg.get("max_slippage", 0.03)  # max allowed ask-bid spread
+MIN_PRICE        = _cfg.get("min_price", 0.15)      # minimum entry price (avoid longshots)
+STOP_LOSS_PCT    = _cfg.get("stop_loss_pct", 0.40)  # stop-loss threshold (40%)
+FORECAST_BUFFER_F = _cfg.get("forecast_buffer_f", 4.0)  # forecast change buffer (Fahrenheit)
+FORECAST_BUFFER_C = _cfg.get("forecast_buffer_c", 2.0)  # forecast change buffer (Celsius)
 SCAN_INTERVAL    = _cfg.get("scan_interval", 3600)   # every hour
 CALIBRATION_MIN  = _cfg.get("calibration_min", 30)
 VC_KEY           = _cfg.get("vc_key", "")
 
 SIGMA_F = 2.0
 SIGMA_C = 1.2
+COOLDOWN_HOURS   = _cfg.get("cooldown_hours", 3.0)  # hours to wait before re-entering same city+date after close
 
 DATA_DIR         = Path("data")
 DATA_DIR.mkdir(exist_ok=True)
@@ -98,13 +103,17 @@ def norm_cdf(x):
     return 0.5 * (1.0 + math.erf(x / math.sqrt(2.0)))
 
 def bucket_prob(forecast, t_low, t_high, sigma=None):
-    """For regular buckets — exact match. For edge buckets — normal distribution."""
+    """Probability of actual temp landing in bucket, using normal distribution for all types.
+    Exact-degree buckets (t_low==t_high) are treated as ±0.5° rounding intervals."""
     s = sigma or 2.0
+    f = float(forecast)
     if t_low == -999:
-        return norm_cdf((t_high - float(forecast)) / s)
+        return norm_cdf((t_high + 0.5 - f) / s)
     if t_high == 999:
-        return 1.0 - norm_cdf((t_low - float(forecast)) / s)
-    return 1.0 if in_bucket(forecast, t_low, t_high) else 0.0
+        return 1.0 - norm_cdf((t_low - 0.5 - f) / s)
+    lo = t_low  - (0.5 if t_low == t_high else 0.0)
+    hi = t_high + (0.5 if t_low == t_high else 0.0)
+    return max(0.0, norm_cdf((hi - f) / s) - norm_cdf((lo - f) / s))
 
 def calc_ev(p, price):
     if price <= 0 or price >= 1: return 0.0
@@ -136,6 +145,14 @@ def get_sigma(city_slug, source="ecmwf"):
     if key in _cal:
         return _cal[key]["sigma"]
     return SIGMA_F if LOCATIONS[city_slug]["unit"] == "F" else SIGMA_C
+
+def get_sigma_adjusted(city_slug, source, hours_left):
+    """Sigma shrinks as we approach resolution — forecasts become more certain."""
+    base = get_sigma(city_slug, source)
+    unit = LOCATIONS[city_slug]["unit"]
+    min_sigma = 0.8 if unit == "F" else 0.5
+    factor = math.sqrt(max(hours_left, 1.0) / 48.0)
+    return max(min_sigma, base * factor)
 
 def run_calibration(markets):
     """Recalculates sigma from resolved markets."""
@@ -495,18 +512,17 @@ def scan_and_update():
                     continue
                 try:
                     prices = json.loads(market.get("outcomePrices", "[0.5,0.5]"))
-                    bid = float(prices[0])
-                    ask = float(prices[1]) if len(prices) > 1 else bid
+                    yes_price = float(prices[0])  # prices[0]=YES, prices[1]=NO
                 except Exception:
                     continue
                 outcomes.append({
                     "question":  question,
                     "market_id": mid,
                     "range":     rng,
-                    "bid":       round(bid, 4),
-                    "ask":       round(ask, 4),
-                    "price":     round(bid, 4),   # for compatibility
-                    "spread":    round(ask - bid, 4),
+                    "bid":       round(yes_price, 4),
+                    "ask":       round(yes_price, 4),  # real ask fetched from bestAsk API
+                    "price":     round(yes_price, 4),
+                    "spread":    0.0,                  # real spread fetched from bestBid/bestAsk
                     "volume":    round(volume, 0),
                 })
 
@@ -551,10 +567,15 @@ def scan_and_update():
                 if current_price is not None:
                     current_price = o.get("bid", current_price)  # sell at bid
                     entry = pos["entry_price"]
-                    stop  = pos.get("stop_price", entry * 0.80)  # 20% stop by default
+                    # Within 12h of resolution the price is driven by actual weather,
+                    # not sentiment — use a tighter floor only for catastrophic mispricing.
+                    if hours < 12:
+                        stop = entry * (1.0 - min(STOP_LOSS_PCT, 0.65))
+                    else:
+                        stop = pos.get("stop_price", entry * (1.0 - STOP_LOSS_PCT))
 
-                    # Trailing: if up 20%+ — move stop to breakeven
-                    if current_price >= entry * 1.20 and stop < entry:
+                    # Trailing: if up 30%+ — move stop to breakeven
+                    if current_price >= entry * 1.30 and stop < entry:
                         pos["stop_price"] = entry
                         pos["trailing_activated"] = True
 
@@ -567,20 +588,26 @@ def scan_and_update():
                         pos["exit_price"]   = current_price
                         pos["pnl"]          = pnl
                         pos["status"]       = "closed"
+                        # Archive closed position and clear for potential re-entry
+                        mkt.setdefault("closed_positions", []).append(dict(pos))
+                        mkt["position"] = None
                         closed += 1
                         reason = "STOP" if current_price < entry else "TRAILING BE"
                         print(f"  [{reason}] {loc['name']} {date} | entry ${entry:.3f} exit ${current_price:.3f} | PnL: {'+'if pnl>=0 else ''}{pnl:.2f}")
 
-            # --- CLOSE POSITION if forecast shifted 2+ degrees ---
-            if mkt.get("position") and forecast_temp is not None:
+            # --- CLOSE POSITION if forecast shifted significantly ---
+            # Only exit if we're far from resolution AND forecast moved a large amount.
+            # Near resolution (<12h) hold — price movements are real weather, not noise.
+            if mkt.get("position") and forecast_temp is not None and hours >= 12:
                 pos = mkt["position"]
                 old_bucket_low  = pos["bucket_low"]
                 old_bucket_high = pos["bucket_high"]
-                # 2-degree buffer — avoid closing on small forecast fluctuations
                 unit = loc["unit"]
-                buffer = 2.0 if unit == "F" else 1.0
+                buffer = FORECAST_BUFFER_F if unit == "F" else FORECAST_BUFFER_C
                 mid_bucket = (old_bucket_low + old_bucket_high) / 2 if old_bucket_low != -999 and old_bucket_high != 999 else forecast_temp
-                forecast_far = abs(forecast_temp - mid_bucket) > (abs(mid_bucket - old_bucket_low) + buffer)
+                # Require forecast to clear the bucket edge PLUS the full buffer
+                bucket_half = abs(mid_bucket - old_bucket_low) if old_bucket_low != -999 else 1.0
+                forecast_far = abs(forecast_temp - mid_bucket) > (bucket_half + buffer)
                 if not in_bucket(forecast_temp, old_bucket_low, old_bucket_high) and forecast_far:
                     current_price = None
                     for o in outcomes:
@@ -595,13 +622,49 @@ def scan_and_update():
                         mkt["position"]["exit_price"]   = current_price
                         mkt["position"]["pnl"]          = pnl
                         mkt["position"]["status"]       = "closed"
+                        # Archive closed position and clear for potential re-entry
+                        mkt.setdefault("closed_positions", []).append(dict(mkt["position"]))
+                        mkt["position"] = None
                         closed += 1
                         print(f"  [CLOSE] {loc['name']} {date} — forecast changed | PnL: {'+'if pnl>=0 else ''}{pnl:.2f}")
 
             # --- OPEN POSITION ---
-            if not mkt.get("position") and forecast_temp is not None and hours >= MIN_HOURS:
-                sigma = get_sigma(city_slug, best_source or "ecmwf")
+            # Cooldown: skip if we recently closed a position on this market
+            in_cooldown = False
+            if not mkt.get("position") and mkt.get("closed_positions"):
+                last_closed = mkt["closed_positions"][-1]
+                closed_at = last_closed.get("closed_at")
+                if closed_at:
+                    try:
+                        closed_time = datetime.fromisoformat(closed_at.replace("Z", "+00:00"))
+                        hours_since = (datetime.now(timezone.utc) - closed_time).total_seconds() / 3600
+                        if hours_since < COOLDOWN_HOURS:
+                            in_cooldown = True
+                    except Exception:
+                        pass
+
+            if in_cooldown:
+                pass  # silently skip — no re-entry during cooldown
+
+            if not mkt.get("position") and not in_cooldown and forecast_temp is not None and hours >= MIN_HOURS:
+                sigma = get_sigma_adjusted(city_slug, best_source or "ecmwf", hours)
                 best_signal = None
+
+                # Market-consensus check: if the market's leading bucket is >2.5 sigma
+                # from our forecast, the market has fresher/better data — skip.
+                if outcomes:
+                    market_leader = max(outcomes, key=lambda x: x["price"])
+                    ml_low, ml_high = market_leader["range"]
+                    if ml_low == -999:
+                        ml_mid = ml_high
+                    elif ml_high == 999:
+                        ml_mid = ml_low
+                    else:
+                        ml_mid = (ml_low + ml_high) / 2
+                    if abs(forecast_temp - ml_mid) > 2.5 * sigma and market_leader["price"] > 0.40:
+                        save_market(mkt)
+                        time.sleep(0.1)
+                        continue
 
                 # Find exactly ONE bucket that matches the forecast
                 # If forecast doesn't fit any bucket cleanly — skip this market
@@ -616,12 +679,12 @@ def scan_and_update():
                     o = matched_bucket
                     t_low, t_high = o["range"]
                     volume = o["volume"]
-                    bid    = o.get("bid", o["price"])
-                    ask    = o.get("ask", o["price"])
-                    spread = o.get("spread", 0)
+                    ask    = o.get("price", o["ask"])
+                    bid    = o.get("bid", ask)
+                    spread = 0.0
 
                     # All filters — if any fails, skip this market entirely
-                    if volume >= MIN_VOLUME:
+                    if volume >= MIN_VOLUME and ask >= MIN_PRICE:
                         p  = bucket_prob(forecast_temp, t_low, t_high, sigma)
                         ev = calc_ev(p, ask)
                         if ev >= MIN_EV:
@@ -661,20 +724,22 @@ def scan_and_update():
                         real_ask = float(mdata.get("bestAsk", best_signal["entry_price"]))
                         real_bid = float(mdata.get("bestBid", best_signal["bid_at_entry"]))
                         real_spread = round(real_ask - real_bid, 4)
-                        # Re-check slippage and price with real values
-                        if real_spread > MAX_SLIPPAGE or real_ask >= MAX_PRICE:
-                            print(f"  [SKIP] {loc['name']} {date} — real ask ${real_ask:.3f} spread ${real_spread:.3f}")
+                        # Re-check ALL filters with real values
+                        real_ev = calc_ev(best_signal["p"], real_ask)
+                        if (real_spread > MAX_SLIPPAGE or real_ask > MAX_PRICE
+                                or real_ask < MIN_PRICE or real_ev < MIN_EV):
+                            print(f"  [SKIP] {loc['name']} {date} — real ask ${real_ask:.3f} spread ${real_spread:.3f} EV {real_ev:+.2f}")
                             skip_position = True
                         else:
                             best_signal["entry_price"]  = real_ask
                             best_signal["bid_at_entry"] = real_bid
                             best_signal["spread"]       = real_spread
                             best_signal["shares"]       = round(best_signal["cost"] / real_ask, 2)
-                            best_signal["ev"]           = round(calc_ev(best_signal["p"], real_ask), 4)
+                            best_signal["ev"]           = round(real_ev, 4)
                     except Exception as e:
                         print(f"  [WARN] Could not fetch real ask for {best_signal['market_id']}: {e}")
 
-                    if not skip_position and best_signal["entry_price"] < MAX_PRICE:
+                    if not skip_position and MIN_PRICE <= best_signal["entry_price"] <= MAX_PRICE:
                         balance -= best_signal["cost"]
                         mkt["position"] = best_signal
                         state["total_trades"] += 1
@@ -896,7 +961,10 @@ def monitor_positions():
             continue
 
         entry = pos["entry_price"]
-        stop  = pos.get("stop_price", entry * 0.80)
+        if hours_left < 12:
+            stop = pos.get("stop_price", entry * (1.0 - min(STOP_LOSS_PCT, 0.65)))
+        else:
+            stop = pos.get("stop_price", entry * (1.0 - STOP_LOSS_PCT))
         city_name = LOCATIONS.get(mkt["city"], {}).get("name", mkt["city"])
 
         # Hours left to resolution
@@ -911,8 +979,8 @@ def monitor_positions():
         else:
             take_profit = 0.75        # 48h+: take profit at $0.75
 
-        # Trailing: if up 20%+ — move stop to breakeven
-        if current_price >= entry * 1.20 and stop < entry:
+        # Trailing: if up 30%+ — move stop to breakeven
+        if current_price >= entry * 1.30 and stop < entry:
             pos["stop_price"] = entry
             pos["trailing_activated"] = True
             print(f"  [TRAILING] {city_name} {mkt['date']} — stop moved to breakeven ${entry:.3f}")
@@ -938,6 +1006,9 @@ def monitor_positions():
             pos["exit_price"]   = current_price
             pos["pnl"]          = pnl
             pos["status"]       = "closed"
+            # Archive closed position and clear for potential re-entry
+            mkt.setdefault("closed_positions", []).append(dict(pos))
+            mkt["position"] = None
             closed += 1
             print(f"  [{reason}] {city_name} {mkt['date']} | entry ${entry:.3f} exit ${current_price:.3f} | {hours_left:.0f}h left | PnL: {'+'if pnl>=0 else ''}{pnl:.2f}")
             save_market(mkt)

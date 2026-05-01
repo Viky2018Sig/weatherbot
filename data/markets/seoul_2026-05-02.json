@@ -1,0 +1,314 @@
+{
+  "city": "seoul",
+  "city_name": "Seoul",
+  "date": "2026-05-02",
+  "unit": "C",
+  "station": "RKSI",
+  "event_end_date": "2026-05-02T12:00:00Z",
+  "hours_at_discovery": 54.9,
+  "status": "open",
+  "position": null,
+  "actual_temp": null,
+  "resolved_outcome": null,
+  "pnl": null,
+  "forecast_snapshots": [
+    {
+      "ts": "2026-04-30T05:04:06.272218+00:00",
+      "horizon": "D+2",
+      "hours_left": 54.9,
+      "ecmwf": 17.1,
+      "hrrr": null,
+      "metar": null,
+      "best": 17.1,
+      "best_source": "ecmwf"
+    },
+    {
+      "ts": "2026-04-30T06:04:51.755909+00:00",
+      "horizon": "D+2",
+      "hours_left": 53.9,
+      "ecmwf": 17.1,
+      "hrrr": null,
+      "metar": null,
+      "best": 17.1,
+      "best_source": "ecmwf"
+    },
+    {
+      "ts": "2026-04-30T07:05:41.428402+00:00",
+      "horizon": "D+2",
+      "hours_left": 52.9,
+      "ecmwf": 17.1,
+      "hrrr": null,
+      "metar": null,
+      "best": 17.1,
+      "best_source": "ecmwf"
+    },
+    {
+      "ts": "2026-04-30T08:06:56.139593+00:00",
+      "horizon": "D+2",
+      "hours_left": 51.9,
+      "ecmwf": 17.1,
+      "hrrr": null,
+      "metar": null,
+      "best": 17.1,
+      "best_source": "ecmwf"
+    },
+    {
+      "ts": "2026-04-30T09:08:14.379659+00:00",
+      "horizon": "D+2",
+      "hours_left": 50.9,
+      "ecmwf": 17.4,
+      "hrrr": null,
+      "metar": null,
+      "best": 17.4,
+      "best_source": "ecmwf"
+    },
+    {
+      "ts": "2026-04-30T11:22:30.608178+00:00",
+      "horizon": "D+2",
+      "hours_left": 48.6,
+      "ecmwf": 17.4,
+      "hrrr": null,
+      "metar": null,
+      "best": 17.4,
+      "best_source": "ecmwf"
+    },
+    {
+      "ts": "2026-04-30T12:23:20.250795+00:00",
+      "horizon": "D+2",
+      "hours_left": 47.6,
+      "ecmwf": 17.4,
+      "hrrr": null,
+      "metar": null,
+      "best": 17.4,
+      "best_source": "ecmwf"
+    },
+    {
+      "ts": "2026-04-30T13:24:10.490308+00:00",
+      "horizon": "D+2",
+      "hours_left": 46.6,
+      "ecmwf": 17.4,
+      "hrrr": null,
+      "metar": null,
+      "best": 17.4,
+      "best_source": "ecmwf"
+    },
+    {
+      "ts": "2026-04-30T14:24:59.265918+00:00",
+      "horizon": "D+2",
+      "hours_left": 45.6,
+      "ecmwf": 18.3,
+      "hrrr": null,
+      "metar": null,
+      "best": 18.3,
+      "best_source": "ecmwf"
+    },
+    {
+      "ts": "2026-04-30T15:25:51.080365+00:00",
+      "horizon": "D+2",
+      "hours_left": 44.6,
+      "ecmwf": 18.3,
+      "hrrr": null,
+      "metar": null,
+      "best": 18.3,
+      "best_source": "ecmwf"
+    }
+  ],
+  "market_snapshots": [
+    {
+      "ts": "2026-04-30T05:04:06.272218+00:00",
+      "top_bucket": "19.0-19.0C",
+      "top_price": 0.27
+    },
+    {
+      "ts": "2026-04-30T06:04:51.755909+00:00",
+      "top_bucket": "19.0-19.0C",
+      "top_price": 0.28
+    },
+    {
+      "ts": "2026-04-30T07:05:41.428402+00:00",
+      "top_bucket": "19.0-19.0C",
+      "top_price": 0.33
+    },
+    {
+      "ts": "2026-04-30T08:06:56.139593+00:00",
+      "top_bucket": "19.0-19.0C",
+      "top_price": 0.25
+    },
+    {
+      "ts": "2026-04-30T09:08:14.379659+00:00",
+      "top_bucket": "19.0-19.0C",
+      "top_price": 0.265
+    },
+    {
+      "ts": "2026-04-30T11:22:30.608178+00:00",
+      "top_bucket": "19.0-19.0C",
+      "top_price": 0.28
+    },
+    {
+      "ts": "2026-04-30T12:23:20.250795+00:00",
+      "top_bucket": "18.0-18.0C",
+      "top_price": 0.295
+    },
+    {
+      "ts": "2026-04-30T13:24:10.490308+00:00",
+      "top_bucket": "18.0-18.0C",
+      "top_price": 0.295
+    },
+    {
+      "ts": "2026-04-30T14:24:59.265918+00:00",
+      "top_bucket": "18.0-18.0C",
+      "top_price": 0.31
+    },
+    {
+      "ts": "2026-04-30T15:25:51.080365+00:00",
+      "top_bucket": "18.0-18.0C",
+      "top_price": 0.275
+    }
+  ],
+  "all_outcomes": [
+    {
+      "question": "Will the highest temperature in Seoul be 11°C or below on May 2?",
+      "market_id": "2122204",
+      "range": [
+        -999.0,
+        11.0
+      ],
+      "bid": 0.0025,
+      "ask": 0.0025,
+      "price": 0.0025,
+      "spread": 0.0,
+      "volume": 1193.0
+    },
+    {
+      "question": "Will the highest temperature in Seoul be 12°C on May 2?",
+      "market_id": "2122205",
+      "range": [
+        12.0,
+        12.0
+      ],
+      "bid": 0.0035,
+      "ask": 0.0035,
+      "price": 0.0035,
+      "spread": 0.0,
+      "volume": 447.0
+    },
+    {
+      "question": "Will the highest temperature in Seoul be 13°C on May 2?",
+      "market_id": "2122206",
+      "range": [
+        13.0,
+        13.0
+      ],
+      "bid": 0.005,
+      "ask": 0.005,
+      "price": 0.005,
+      "spread": 0.0,
+      "volume": 342.0
+    },
+    {
+      "question": "Will the highest temperature in Seoul be 14°C on May 2?",
+      "market_id": "2122207",
+      "range": [
+        14.0,
+        14.0
+      ],
+      "bid": 0.008,
+      "ask": 0.008,
+      "price": 0.008,
+      "spread": 0.0,
+      "volume": 930.0
+    },
+    {
+      "question": "Will the highest temperature in Seoul be 15°C on May 2?",
+      "market_id": "2122208",
+      "range": [
+        15.0,
+        15.0
+      ],
+      "bid": 0.016,
+      "ask": 0.016,
+      "price": 0.016,
+      "spread": 0.0,
+      "volume": 1435.0
+    },
+    {
+      "question": "Will the highest temperature in Seoul be 16°C on May 2?",
+      "market_id": "2122209",
+      "range": [
+        16.0,
+        16.0
+      ],
+      "bid": 0.05,
+      "ask": 0.05,
+      "price": 0.05,
+      "spread": 0.0,
+      "volume": 1604.0
+    },
+    {
+      "question": "Will the highest temperature in Seoul be 17°C on May 2?",
+      "market_id": "2122210",
+      "range": [
+        17.0,
+        17.0
+      ],
+      "bid": 0.17,
+      "ask": 0.17,
+      "price": 0.17,
+      "spread": 0.0,
+      "volume": 457.0
+    },
+    {
+      "question": "Will the highest temperature in Seoul be 18°C on May 2?",
+      "market_id": "2122211",
+      "range": [
+        18.0,
+        18.0
+      ],
+      "bid": 0.275,
+      "ask": 0.275,
+      "price": 0.275,
+      "spread": 0.0,
+      "volume": 212.0
+    },
+    {
+      "question": "Will the highest temperature in Seoul be 19°C on May 2?",
+      "market_id": "2122212",
+      "range": [
+        19.0,
+        19.0
+      ],
+      "bid": 0.27,
+      "ask": 0.27,
+      "price": 0.27,
+      "spread": 0.0,
+      "volume": 334.0
+    },
+    {
+      "question": "Will the highest temperature in Seoul be 20°C on May 2?",
+      "market_id": "2122213",
+      "range": [
+        20.0,
+        20.0
+      ],
+      "bid": 0.1185,
+      "ask": 0.1185,
+      "price": 0.1185,
+      "spread": 0.0,
+      "volume": 517.0
+    },
+    {
+      "question": "Will the highest temperature in Seoul be 21°C or higher on May 2?",
+      "market_id": "2122214",
+      "range": [
+        21.0,
+        999.0
+      ],
+      "bid": 0.112,
+      "ask": 0.112,
+      "price": 0.112,
+      "spread": 0.0,
+      "volume": 1450.0
+    }
+  ],
+  "created_at": "2026-04-30T05:04:07.943469+00:00"
+}

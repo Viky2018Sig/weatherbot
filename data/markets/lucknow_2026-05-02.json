@@ -1,0 +1,341 @@
+{
+  "city": "lucknow",
+  "city_name": "Lucknow",
+  "date": "2026-05-02",
+  "unit": "C",
+  "station": "VILK",
+  "event_end_date": "2026-05-02T12:00:00Z",
+  "hours_at_discovery": 54.9,
+  "status": "open",
+  "position": null,
+  "actual_temp": null,
+  "resolved_outcome": null,
+  "pnl": null,
+  "forecast_snapshots": [
+    {
+      "ts": "2026-04-30T05:04:14.022235+00:00",
+      "horizon": "D+2",
+      "hours_left": 54.9,
+      "ecmwf": 37.6,
+      "hrrr": null,
+      "metar": null,
+      "best": 37.6,
+      "best_source": "ecmwf"
+    },
+    {
+      "ts": "2026-04-30T06:04:58.447818+00:00",
+      "horizon": "D+2",
+      "hours_left": 53.9,
+      "ecmwf": 37.6,
+      "hrrr": null,
+      "metar": null,
+      "best": 37.6,
+      "best_source": "ecmwf"
+    },
+    {
+      "ts": "2026-04-30T07:05:54.027001+00:00",
+      "horizon": "D+2",
+      "hours_left": 52.9,
+      "ecmwf": 37.6,
+      "hrrr": null,
+      "metar": null,
+      "best": 37.6,
+      "best_source": "ecmwf"
+    },
+    {
+      "ts": "2026-04-30T08:07:11.404571+00:00",
+      "horizon": "D+2",
+      "hours_left": 51.9,
+      "ecmwf": 37.6,
+      "hrrr": null,
+      "metar": null,
+      "best": 37.6,
+      "best_source": "ecmwf"
+    },
+    {
+      "ts": "2026-04-30T09:08:21.691197+00:00",
+      "horizon": "D+2",
+      "hours_left": 50.9,
+      "ecmwf": 38.2,
+      "hrrr": null,
+      "metar": null,
+      "best": 38.2,
+      "best_source": "ecmwf"
+    },
+    {
+      "ts": "2026-04-30T11:22:39.987300+00:00",
+      "horizon": "D+2",
+      "hours_left": 48.6,
+      "ecmwf": 38.2,
+      "hrrr": null,
+      "metar": null,
+      "best": 38.2,
+      "best_source": "ecmwf"
+    },
+    {
+      "ts": "2026-04-30T12:23:30.118627+00:00",
+      "horizon": "D+2",
+      "hours_left": 47.6,
+      "ecmwf": 38.2,
+      "hrrr": null,
+      "metar": null,
+      "best": 38.2,
+      "best_source": "ecmwf"
+    },
+    {
+      "ts": "2026-04-30T13:24:17.284177+00:00",
+      "horizon": "D+2",
+      "hours_left": 46.6,
+      "ecmwf": 38.2,
+      "hrrr": null,
+      "metar": null,
+      "best": 38.2,
+      "best_source": "ecmwf"
+    },
+    {
+      "ts": "2026-04-30T14:25:11.427392+00:00",
+      "horizon": "D+2",
+      "hours_left": 45.6,
+      "ecmwf": 38.1,
+      "hrrr": null,
+      "metar": null,
+      "best": 38.1,
+      "best_source": "ecmwf"
+    },
+    {
+      "ts": "2026-04-30T15:26:06.796818+00:00",
+      "horizon": "D+2",
+      "hours_left": 44.6,
+      "ecmwf": 38.1,
+      "hrrr": null,
+      "metar": null,
+      "best": 38.1,
+      "best_source": "ecmwf"
+    }
+  ],
+  "market_snapshots": [
+    {
+      "ts": "2026-04-30T05:04:14.022235+00:00",
+      "top_bucket": "-999.0-36.0C",
+      "top_price": 0.29
+    },
+    {
+      "ts": "2026-04-30T06:04:58.447818+00:00",
+      "top_bucket": "-999.0-36.0C",
+      "top_price": 0.305
+    },
+    {
+      "ts": "2026-04-30T07:05:54.027001+00:00",
+      "top_bucket": "-999.0-36.0C",
+      "top_price": 0.45
+    },
+    {
+      "ts": "2026-04-30T08:07:11.404571+00:00",
+      "top_bucket": "-999.0-36.0C",
+      "top_price": 0.455
+    },
+    {
+      "ts": "2026-04-30T09:08:21.691197+00:00",
+      "top_bucket": "-999.0-36.0C",
+      "top_price": 0.465
+    },
+    {
+      "ts": "2026-04-30T11:22:39.987300+00:00",
+      "top_bucket": "-999.0-36.0C",
+      "top_price": 0.515
+    },
+    {
+      "ts": "2026-04-30T12:23:30.118627+00:00",
+      "top_bucket": "-999.0-36.0C",
+      "top_price": 0.525
+    },
+    {
+      "ts": "2026-04-30T13:24:17.284177+00:00",
+      "top_bucket": "-999.0-36.0C",
+      "top_price": 0.53
+    },
+    {
+      "ts": "2026-04-30T14:25:11.427392+00:00",
+      "top_bucket": "-999.0-36.0C",
+      "top_price": 0.615
+    },
+    {
+      "ts": "2026-04-30T15:26:06.796818+00:00",
+      "top_bucket": "-999.0-36.0C",
+      "top_price": 0.665
+    }
+  ],
+  "all_outcomes": [
+    {
+      "question": "Will the highest temperature in Lucknow be 36°C or below on May 2?",
+      "market_id": "2122314",
+      "range": [
+        -999.0,
+        36.0
+      ],
+      "bid": 0.665,
+      "ask": 0.665,
+      "price": 0.665,
+      "spread": 0.0,
+      "volume": 825.0
+    },
+    {
+      "question": "Will the highest temperature in Lucknow be 37°C on May 2?",
+      "market_id": "2122315",
+      "range": [
+        37.0,
+        37.0
+      ],
+      "bid": 0.22,
+      "ask": 0.22,
+      "price": 0.22,
+      "spread": 0.0,
+      "volume": 569.0
+    },
+    {
+      "question": "Will the highest temperature in Lucknow be 38°C on May 2?",
+      "market_id": "2122316",
+      "range": [
+        38.0,
+        38.0
+      ],
+      "bid": 0.045,
+      "ask": 0.045,
+      "price": 0.045,
+      "spread": 0.0,
+      "volume": 1046.0
+    },
+    {
+      "question": "Will the highest temperature in Lucknow be 39°C on May 2?",
+      "market_id": "2122317",
+      "range": [
+        39.0,
+        39.0
+      ],
+      "bid": 0.013,
+      "ask": 0.013,
+      "price": 0.013,
+      "spread": 0.0,
+      "volume": 1130.0
+    },
+    {
+      "question": "Will the highest temperature in Lucknow be 40°C on May 2?",
+      "market_id": "2122318",
+      "range": [
+        40.0,
+        40.0
+      ],
+      "bid": 0.0105,
+      "ask": 0.0105,
+      "price": 0.0105,
+      "spread": 0.0,
+      "volume": 1474.0
+    },
+    {
+      "question": "Will the highest temperature in Lucknow be 41°C on May 2?",
+      "market_id": "2122319",
+      "range": [
+        41.0,
+        41.0
+      ],
+      "bid": 0.006,
+      "ask": 0.006,
+      "price": 0.006,
+      "spread": 0.0,
+      "volume": 995.0
+    },
+    {
+      "question": "Will the highest temperature in Lucknow be 42°C on May 2?",
+      "market_id": "2122320",
+      "range": [
+        42.0,
+        42.0
+      ],
+      "bid": 0.0075,
+      "ask": 0.0075,
+      "price": 0.0075,
+      "spread": 0.0,
+      "volume": 577.0
+    },
+    {
+      "question": "Will the highest temperature in Lucknow be 43°C on May 2?",
+      "market_id": "2122321",
+      "range": [
+        43.0,
+        43.0
+      ],
+      "bid": 0.0055,
+      "ask": 0.0055,
+      "price": 0.0055,
+      "spread": 0.0,
+      "volume": 477.0
+    },
+    {
+      "question": "Will the highest temperature in Lucknow be 44°C on May 2?",
+      "market_id": "2122322",
+      "range": [
+        44.0,
+        44.0
+      ],
+      "bid": 0.0015,
+      "ask": 0.0015,
+      "price": 0.0015,
+      "spread": 0.0,
+      "volume": 964.0
+    },
+    {
+      "question": "Will the highest temperature in Lucknow be 45°C on May 2?",
+      "market_id": "2122323",
+      "range": [
+        45.0,
+        45.0
+      ],
+      "bid": 0.0025,
+      "ask": 0.0025,
+      "price": 0.0025,
+      "spread": 0.0,
+      "volume": 784.0
+    },
+    {
+      "question": "Will the highest temperature in Lucknow be 46°C or higher on May 2?",
+      "market_id": "2122324",
+      "range": [
+        46.0,
+        999.0
+      ],
+      "bid": 0.0005,
+      "ask": 0.0005,
+      "price": 0.0005,
+      "spread": 0.0,
+      "volume": 656.0
+    }
+  ],
+  "created_at": "2026-04-30T05:04:16.132951+00:00",
+  "closed_positions": [
+    {
+      "market_id": "2122316",
+      "question": "Will the highest temperature in Lucknow be 38°C on May 2?",
+      "bucket_low": 38.0,
+      "bucket_high": 38.0,
+      "entry_price": 0.1,
+      "bid_at_entry": 0.08,
+      "spread": 0.02,
+      "shares": 10.0,
+      "cost": 1.0,
+      "p": 0.3232,
+      "ev": 2.232,
+      "kelly": 0.0769,
+      "forecast_temp": 38.2,
+      "forecast_src": "ecmwf",
+      "sigma": 1.1823040702867713,
+      "opened_at": "2026-04-30T13:24:17.284177+00:00",
+      "status": "closed",
+      "pnl": -0.55,
+      "exit_price": 0.045,
+      "close_reason": "stop_loss",
+      "closed_at": "2026-04-30T15:26:06.796818+00:00",
+      "stop_price": 0.1,
+      "trailing_activated": true
+    }
+  ]
+}

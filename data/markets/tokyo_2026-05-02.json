@@ -1,0 +1,314 @@
+{
+  "city": "tokyo",
+  "city_name": "Tokyo",
+  "date": "2026-05-02",
+  "unit": "C",
+  "station": "RJTT",
+  "event_end_date": "2026-05-02T12:00:00Z",
+  "hours_at_discovery": 54.9,
+  "status": "open",
+  "position": null,
+  "actual_temp": null,
+  "resolved_outcome": null,
+  "pnl": null,
+  "forecast_snapshots": [
+    {
+      "ts": "2026-04-30T05:04:08.069782+00:00",
+      "horizon": "D+2",
+      "hours_left": 54.9,
+      "ecmwf": 24.8,
+      "hrrr": null,
+      "metar": null,
+      "best": 24.8,
+      "best_source": "ecmwf"
+    },
+    {
+      "ts": "2026-04-30T06:04:53.434180+00:00",
+      "horizon": "D+2",
+      "hours_left": 53.9,
+      "ecmwf": 24.8,
+      "hrrr": null,
+      "metar": null,
+      "best": 24.8,
+      "best_source": "ecmwf"
+    },
+    {
+      "ts": "2026-04-30T07:05:42.995024+00:00",
+      "horizon": "D+2",
+      "hours_left": 52.9,
+      "ecmwf": 24.8,
+      "hrrr": null,
+      "metar": null,
+      "best": 24.8,
+      "best_source": "ecmwf"
+    },
+    {
+      "ts": "2026-04-30T08:06:58.516222+00:00",
+      "horizon": "D+2",
+      "hours_left": 51.9,
+      "ecmwf": 24.8,
+      "hrrr": null,
+      "metar": null,
+      "best": 24.8,
+      "best_source": "ecmwf"
+    },
+    {
+      "ts": "2026-04-30T09:08:15.926652+00:00",
+      "horizon": "D+2",
+      "hours_left": 50.9,
+      "ecmwf": 24.8,
+      "hrrr": null,
+      "metar": null,
+      "best": 24.8,
+      "best_source": "ecmwf"
+    },
+    {
+      "ts": "2026-04-30T11:22:33.026726+00:00",
+      "horizon": "D+2",
+      "hours_left": 48.6,
+      "ecmwf": 24.8,
+      "hrrr": null,
+      "metar": null,
+      "best": 24.8,
+      "best_source": "ecmwf"
+    },
+    {
+      "ts": "2026-04-30T12:23:21.837222+00:00",
+      "horizon": "D+2",
+      "hours_left": 47.6,
+      "ecmwf": 24.8,
+      "hrrr": null,
+      "metar": null,
+      "best": 24.8,
+      "best_source": "ecmwf"
+    },
+    {
+      "ts": "2026-04-30T13:24:12.204276+00:00",
+      "horizon": "D+2",
+      "hours_left": 46.6,
+      "ecmwf": 24.8,
+      "hrrr": null,
+      "metar": null,
+      "best": 24.8,
+      "best_source": "ecmwf"
+    },
+    {
+      "ts": "2026-04-30T14:25:01.881036+00:00",
+      "horizon": "D+2",
+      "hours_left": 45.6,
+      "ecmwf": 24.4,
+      "hrrr": null,
+      "metar": null,
+      "best": 24.4,
+      "best_source": "ecmwf"
+    },
+    {
+      "ts": "2026-04-30T15:25:52.752035+00:00",
+      "horizon": "D+2",
+      "hours_left": 44.6,
+      "ecmwf": 24.4,
+      "hrrr": null,
+      "metar": null,
+      "best": 24.4,
+      "best_source": "ecmwf"
+    }
+  ],
+  "market_snapshots": [
+    {
+      "ts": "2026-04-30T05:04:08.069782+00:00",
+      "top_bucket": "25.0-999.0C",
+      "top_price": 0.28
+    },
+    {
+      "ts": "2026-04-30T06:04:53.434180+00:00",
+      "top_bucket": "25.0-999.0C",
+      "top_price": 0.375
+    },
+    {
+      "ts": "2026-04-30T07:05:42.995024+00:00",
+      "top_bucket": "25.0-999.0C",
+      "top_price": 0.565
+    },
+    {
+      "ts": "2026-04-30T08:06:58.516222+00:00",
+      "top_bucket": "25.0-999.0C",
+      "top_price": 0.63
+    },
+    {
+      "ts": "2026-04-30T09:08:15.926652+00:00",
+      "top_bucket": "25.0-999.0C",
+      "top_price": 0.555
+    },
+    {
+      "ts": "2026-04-30T11:22:33.026726+00:00",
+      "top_bucket": "25.0-999.0C",
+      "top_price": 0.56
+    },
+    {
+      "ts": "2026-04-30T12:23:21.837222+00:00",
+      "top_bucket": "25.0-999.0C",
+      "top_price": 0.59
+    },
+    {
+      "ts": "2026-04-30T13:24:12.204276+00:00",
+      "top_bucket": "25.0-999.0C",
+      "top_price": 0.6
+    },
+    {
+      "ts": "2026-04-30T14:25:01.881036+00:00",
+      "top_bucket": "25.0-999.0C",
+      "top_price": 0.585
+    },
+    {
+      "ts": "2026-04-30T15:25:52.752035+00:00",
+      "top_bucket": "25.0-999.0C",
+      "top_price": 0.625
+    }
+  ],
+  "all_outcomes": [
+    {
+      "question": "Will the highest temperature in Tokyo be 15°C or below on May 2?",
+      "market_id": "2122347",
+      "range": [
+        -999.0,
+        15.0
+      ],
+      "bid": 0.0005,
+      "ask": 0.0005,
+      "price": 0.0005,
+      "spread": 0.0,
+      "volume": 1920.0
+    },
+    {
+      "question": "Will the highest temperature in Tokyo be 16°C on May 2?",
+      "market_id": "2122348",
+      "range": [
+        16.0,
+        16.0
+      ],
+      "bid": 0.0005,
+      "ask": 0.0005,
+      "price": 0.0005,
+      "spread": 0.0,
+      "volume": 1563.0
+    },
+    {
+      "question": "Will the highest temperature in Tokyo be 17°C on May 2?",
+      "market_id": "2122349",
+      "range": [
+        17.0,
+        17.0
+      ],
+      "bid": 0.004,
+      "ask": 0.004,
+      "price": 0.004,
+      "spread": 0.0,
+      "volume": 805.0
+    },
+    {
+      "question": "Will the highest temperature in Tokyo be 18°C on May 2?",
+      "market_id": "2122350",
+      "range": [
+        18.0,
+        18.0
+      ],
+      "bid": 0.005,
+      "ask": 0.005,
+      "price": 0.005,
+      "spread": 0.0,
+      "volume": 880.0
+    },
+    {
+      "question": "Will the highest temperature in Tokyo be 19°C on May 2?",
+      "market_id": "2122351",
+      "range": [
+        19.0,
+        19.0
+      ],
+      "bid": 0.0065,
+      "ask": 0.0065,
+      "price": 0.0065,
+      "spread": 0.0,
+      "volume": 470.0
+    },
+    {
+      "question": "Will the highest temperature in Tokyo be 20°C on May 2?",
+      "market_id": "2122352",
+      "range": [
+        20.0,
+        20.0
+      ],
+      "bid": 0.005,
+      "ask": 0.005,
+      "price": 0.005,
+      "spread": 0.0,
+      "volume": 726.0
+    },
+    {
+      "question": "Will the highest temperature in Tokyo be 21°C on May 2?",
+      "market_id": "2122353",
+      "range": [
+        21.0,
+        21.0
+      ],
+      "bid": 0.008,
+      "ask": 0.008,
+      "price": 0.008,
+      "spread": 0.0,
+      "volume": 542.0
+    },
+    {
+      "question": "Will the highest temperature in Tokyo be 22°C on May 2?",
+      "market_id": "2122354",
+      "range": [
+        22.0,
+        22.0
+      ],
+      "bid": 0.017,
+      "ask": 0.017,
+      "price": 0.017,
+      "spread": 0.0,
+      "volume": 1213.0
+    },
+    {
+      "question": "Will the highest temperature in Tokyo be 23°C on May 2?",
+      "market_id": "2122355",
+      "range": [
+        23.0,
+        23.0
+      ],
+      "bid": 0.08,
+      "ask": 0.08,
+      "price": 0.08,
+      "spread": 0.0,
+      "volume": 264.0
+    },
+    {
+      "question": "Will the highest temperature in Tokyo be 24°C on May 2?",
+      "market_id": "2122356",
+      "range": [
+        24.0,
+        24.0
+      ],
+      "bid": 0.29,
+      "ask": 0.29,
+      "price": 0.29,
+      "spread": 0.0,
+      "volume": 534.0
+    },
+    {
+      "question": "Will the highest temperature in Tokyo be 25°C or higher on May 2?",
+      "market_id": "2122357",
+      "range": [
+        25.0,
+        999.0
+      ],
+      "bid": 0.625,
+      "ask": 0.625,
+      "price": 0.625,
+      "spread": 0.0,
+      "volume": 663.0
+    }
+  ],
+  "created_at": "2026-04-30T05:04:10.126720+00:00"
+}

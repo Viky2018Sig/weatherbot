@@ -1,14 +1,20 @@
 {
-  "balance": 10000.0,
-  "max_bet": 20.0,
-  "min_ev": 0.1,
-  "max_price": 0.45,
+  "balance": 100.0,
+  "max_bet": 1.0,
+  "min_ev": 0.08,
+  "mode": "paper",
+  "max_price": 0.70,
+  "min_price": 0.08,
   "min_volume": 500,
   "min_hours": 2.0,
   "max_hours": 72.0,
-  "kelly_fraction": 0.25,
+  "kelly_fraction": 0.30,
   "scan_interval": 3600,
   "calibration_min": 30,
-  "vc_key": "YOUR_KEY_HERE",
-  "max_slippage": 0.03
+  "vc_key": "JAL93MEL2CTPYBMW54PJWF7XC",
+  "max_slippage": 0.04,
+  "cooldown_hours": 3.0,
+  "stop_loss_pct": 0.55,
+  "forecast_buffer_f": 7.0,
+  "forecast_buffer_c": 4.0
 }

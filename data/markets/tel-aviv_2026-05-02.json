@@ -1,0 +1,314 @@
+{
+  "city": "tel-aviv",
+  "city_name": "Tel Aviv",
+  "date": "2026-05-02",
+  "unit": "C",
+  "station": "LLBG",
+  "event_end_date": "2026-05-02T12:00:00Z",
+  "hours_at_discovery": 54.9,
+  "status": "open",
+  "position": null,
+  "actual_temp": null,
+  "resolved_outcome": null,
+  "pnl": null,
+  "forecast_snapshots": [
+    {
+      "ts": "2026-04-30T05:04:16.259550+00:00",
+      "horizon": "D+2",
+      "hours_left": 54.9,
+      "ecmwf": 30.5,
+      "hrrr": null,
+      "metar": null,
+      "best": 30.5,
+      "best_source": "ecmwf"
+    },
+    {
+      "ts": "2026-04-30T06:05:00.909019+00:00",
+      "horizon": "D+2",
+      "hours_left": 53.9,
+      "ecmwf": 30.5,
+      "hrrr": null,
+      "metar": null,
+      "best": 30.5,
+      "best_source": "ecmwf"
+    },
+    {
+      "ts": "2026-04-30T07:05:55.592994+00:00",
+      "horizon": "D+2",
+      "hours_left": 52.9,
+      "ecmwf": 30.5,
+      "hrrr": null,
+      "metar": null,
+      "best": 30.5,
+      "best_source": "ecmwf"
+    },
+    {
+      "ts": "2026-04-30T08:07:14.103645+00:00",
+      "horizon": "D+2",
+      "hours_left": 51.9,
+      "ecmwf": 30.5,
+      "hrrr": null,
+      "metar": null,
+      "best": 30.5,
+      "best_source": "ecmwf"
+    },
+    {
+      "ts": "2026-04-30T09:08:23.999818+00:00",
+      "horizon": "D+2",
+      "hours_left": 50.9,
+      "ecmwf": 31.1,
+      "hrrr": null,
+      "metar": null,
+      "best": 31.1,
+      "best_source": "ecmwf"
+    },
+    {
+      "ts": "2026-04-30T11:22:41.677190+00:00",
+      "horizon": "D+2",
+      "hours_left": 48.6,
+      "ecmwf": 31.1,
+      "hrrr": null,
+      "metar": null,
+      "best": 31.1,
+      "best_source": "ecmwf"
+    },
+    {
+      "ts": "2026-04-30T12:23:32.185091+00:00",
+      "horizon": "D+2",
+      "hours_left": 47.6,
+      "ecmwf": 31.1,
+      "hrrr": null,
+      "metar": null,
+      "best": 31.1,
+      "best_source": "ecmwf"
+    },
+    {
+      "ts": "2026-04-30T13:24:19.380768+00:00",
+      "horizon": "D+2",
+      "hours_left": 46.6,
+      "ecmwf": 31.1,
+      "hrrr": null,
+      "metar": null,
+      "best": 31.1,
+      "best_source": "ecmwf"
+    },
+    {
+      "ts": "2026-04-30T14:25:13.306385+00:00",
+      "horizon": "D+2",
+      "hours_left": 45.6,
+      "ecmwf": 30.2,
+      "hrrr": null,
+      "metar": null,
+      "best": 30.2,
+      "best_source": "ecmwf"
+    },
+    {
+      "ts": "2026-04-30T15:26:12.251249+00:00",
+      "horizon": "D+2",
+      "hours_left": 44.6,
+      "ecmwf": 30.2,
+      "hrrr": null,
+      "metar": null,
+      "best": 30.2,
+      "best_source": "ecmwf"
+    }
+  ],
+  "market_snapshots": [
+    {
+      "ts": "2026-04-30T05:04:16.259550+00:00",
+      "top_bucket": "28.0-28.0C",
+      "top_price": 0.265
+    },
+    {
+      "ts": "2026-04-30T06:05:00.909019+00:00",
+      "top_bucket": "29.0-29.0C",
+      "top_price": 0.235
+    },
+    {
+      "ts": "2026-04-30T07:05:55.592994+00:00",
+      "top_bucket": "30.0-30.0C",
+      "top_price": 0.245
+    },
+    {
+      "ts": "2026-04-30T08:07:14.103645+00:00",
+      "top_bucket": "30.0-30.0C",
+      "top_price": 0.305
+    },
+    {
+      "ts": "2026-04-30T09:08:23.999818+00:00",
+      "top_bucket": "30.0-30.0C",
+      "top_price": 0.25
+    },
+    {
+      "ts": "2026-04-30T11:22:41.677190+00:00",
+      "top_bucket": "29.0-29.0C",
+      "top_price": 0.235
+    },
+    {
+      "ts": "2026-04-30T12:23:32.185091+00:00",
+      "top_bucket": "29.0-29.0C",
+      "top_price": 0.235
+    },
+    {
+      "ts": "2026-04-30T13:24:19.380768+00:00",
+      "top_bucket": "29.0-29.0C",
+      "top_price": 0.235
+    },
+    {
+      "ts": "2026-04-30T14:25:13.306385+00:00",
+      "top_bucket": "29.0-29.0C",
+      "top_price": 0.235
+    },
+    {
+      "ts": "2026-04-30T15:26:12.251249+00:00",
+      "top_bucket": "29.0-29.0C",
+      "top_price": 0.235
+    }
+  ],
+  "all_outcomes": [
+    {
+      "question": "Will the highest temperature in Tel Aviv be 21°C or below on May 2?",
+      "market_id": "2122336",
+      "range": [
+        -999.0,
+        21.0
+      ],
+      "bid": 0.003,
+      "ask": 0.003,
+      "price": 0.003,
+      "spread": 0.0,
+      "volume": 814.0
+    },
+    {
+      "question": "Will the highest temperature in Tel Aviv be 22°C on May 2?",
+      "market_id": "2122337",
+      "range": [
+        22.0,
+        22.0
+      ],
+      "bid": 0.0025,
+      "ask": 0.0025,
+      "price": 0.0025,
+      "spread": 0.0,
+      "volume": 1324.0
+    },
+    {
+      "question": "Will the highest temperature in Tel Aviv be 23°C on May 2?",
+      "market_id": "2122338",
+      "range": [
+        23.0,
+        23.0
+      ],
+      "bid": 0.0055,
+      "ask": 0.0055,
+      "price": 0.0055,
+      "spread": 0.0,
+      "volume": 298.0
+    },
+    {
+      "question": "Will the highest temperature in Tel Aviv be 24°C on May 2?",
+      "market_id": "2122339",
+      "range": [
+        24.0,
+        24.0
+      ],
+      "bid": 0.0065,
+      "ask": 0.0065,
+      "price": 0.0065,
+      "spread": 0.0,
+      "volume": 330.0
+    },
+    {
+      "question": "Will the highest temperature in Tel Aviv be 25°C on May 2?",
+      "market_id": "2122340",
+      "range": [
+        25.0,
+        25.0
+      ],
+      "bid": 0.0065,
+      "ask": 0.0065,
+      "price": 0.0065,
+      "spread": 0.0,
+      "volume": 544.0
+    },
+    {
+      "question": "Will the highest temperature in Tel Aviv be 26°C on May 2?",
+      "market_id": "2122341",
+      "range": [
+        26.0,
+        26.0
+      ],
+      "bid": 0.0345,
+      "ask": 0.0345,
+      "price": 0.0345,
+      "spread": 0.0,
+      "volume": 80.0
+    },
+    {
+      "question": "Will the highest temperature in Tel Aviv be 27°C on May 2?",
+      "market_id": "2122342",
+      "range": [
+        27.0,
+        27.0
+      ],
+      "bid": 0.045,
+      "ask": 0.045,
+      "price": 0.045,
+      "spread": 0.0,
+      "volume": 36.0
+    },
+    {
+      "question": "Will the highest temperature in Tel Aviv be 28°C on May 2?",
+      "market_id": "2122343",
+      "range": [
+        28.0,
+        28.0
+      ],
+      "bid": 0.215,
+      "ask": 0.215,
+      "price": 0.215,
+      "spread": 0.0,
+      "volume": 5.0
+    },
+    {
+      "question": "Will the highest temperature in Tel Aviv be 29°C on May 2?",
+      "market_id": "2122344",
+      "range": [
+        29.0,
+        29.0
+      ],
+      "bid": 0.235,
+      "ask": 0.235,
+      "price": 0.235,
+      "spread": 0.0,
+      "volume": 230.0
+    },
+    {
+      "question": "Will the highest temperature in Tel Aviv be 30°C on May 2?",
+      "market_id": "2122345",
+      "range": [
+        30.0,
+        30.0
+      ],
+      "bid": 0.215,
+      "ask": 0.215,
+      "price": 0.215,
+      "spread": 0.0,
+      "volume": 43.0
+    },
+    {
+      "question": "Will the highest temperature in Tel Aviv be 31°C or higher on May 2?",
+      "market_id": "2122346",
+      "range": [
+        31.0,
+        999.0
+      ],
+      "bid": 0.195,
+      "ask": 0.195,
+      "price": 0.195,
+      "spread": 0.0,
+      "volume": 371.0
+    }
+  ],
+  "created_at": "2026-04-30T05:04:17.919851+00:00"
+}

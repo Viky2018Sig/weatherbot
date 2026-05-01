@@ -1,0 +1,314 @@
+{
+  "city": "ankara",
+  "city_name": "Ankara",
+  "date": "2026-05-02",
+  "unit": "C",
+  "station": "LTAC",
+  "event_end_date": "2026-05-02T12:00:00Z",
+  "hours_at_discovery": 54.9,
+  "status": "open",
+  "position": null,
+  "actual_temp": null,
+  "resolved_outcome": null,
+  "pnl": null,
+  "forecast_snapshots": [
+    {
+      "ts": "2026-04-30T05:04:03.845735+00:00",
+      "horizon": "D+2",
+      "hours_left": 54.9,
+      "ecmwf": 8.2,
+      "hrrr": null,
+      "metar": null,
+      "best": 8.2,
+      "best_source": "ecmwf"
+    },
+    {
+      "ts": "2026-04-30T06:04:50.086233+00:00",
+      "horizon": "D+2",
+      "hours_left": 53.9,
+      "ecmwf": 8.2,
+      "hrrr": null,
+      "metar": null,
+      "best": 8.2,
+      "best_source": "ecmwf"
+    },
+    {
+      "ts": "2026-04-30T07:05:38.905571+00:00",
+      "horizon": "D+2",
+      "hours_left": 52.9,
+      "ecmwf": 8.2,
+      "hrrr": null,
+      "metar": null,
+      "best": 8.2,
+      "best_source": "ecmwf"
+    },
+    {
+      "ts": "2026-04-30T08:06:48.565752+00:00",
+      "horizon": "D+2",
+      "hours_left": 51.9,
+      "ecmwf": 8.2,
+      "hrrr": null,
+      "metar": null,
+      "best": 8.2,
+      "best_source": "ecmwf"
+    },
+    {
+      "ts": "2026-04-30T09:08:12.132042+00:00",
+      "horizon": "D+2",
+      "hours_left": 50.9,
+      "ecmwf": 7.7,
+      "hrrr": null,
+      "metar": null,
+      "best": 7.7,
+      "best_source": "ecmwf"
+    },
+    {
+      "ts": "2026-04-30T11:22:28.404507+00:00",
+      "horizon": "D+2",
+      "hours_left": 48.6,
+      "ecmwf": 7.7,
+      "hrrr": null,
+      "metar": null,
+      "best": 7.7,
+      "best_source": "ecmwf"
+    },
+    {
+      "ts": "2026-04-30T12:23:18.425893+00:00",
+      "horizon": "D+2",
+      "hours_left": 47.6,
+      "ecmwf": 7.7,
+      "hrrr": null,
+      "metar": null,
+      "best": 7.7,
+      "best_source": "ecmwf"
+    },
+    {
+      "ts": "2026-04-30T13:24:08.580044+00:00",
+      "horizon": "D+2",
+      "hours_left": 46.6,
+      "ecmwf": 7.7,
+      "hrrr": null,
+      "metar": null,
+      "best": 7.7,
+      "best_source": "ecmwf"
+    },
+    {
+      "ts": "2026-04-30T14:24:56.987351+00:00",
+      "horizon": "D+2",
+      "hours_left": 45.6,
+      "ecmwf": 7.9,
+      "hrrr": null,
+      "metar": null,
+      "best": 7.9,
+      "best_source": "ecmwf"
+    },
+    {
+      "ts": "2026-04-30T15:25:49.233033+00:00",
+      "horizon": "D+2",
+      "hours_left": 44.6,
+      "ecmwf": 7.9,
+      "hrrr": null,
+      "metar": null,
+      "best": 7.9,
+      "best_source": "ecmwf"
+    }
+  ],
+  "market_snapshots": [
+    {
+      "ts": "2026-04-30T05:04:03.845735+00:00",
+      "top_bucket": "9.0-9.0C",
+      "top_price": 0.22
+    },
+    {
+      "ts": "2026-04-30T06:04:50.086233+00:00",
+      "top_bucket": "8.0-8.0C",
+      "top_price": 0.2
+    },
+    {
+      "ts": "2026-04-30T07:05:38.905571+00:00",
+      "top_bucket": "8.0-8.0C",
+      "top_price": 0.325
+    },
+    {
+      "ts": "2026-04-30T08:06:48.565752+00:00",
+      "top_bucket": "8.0-8.0C",
+      "top_price": 0.32
+    },
+    {
+      "ts": "2026-04-30T09:08:12.132042+00:00",
+      "top_bucket": "8.0-8.0C",
+      "top_price": 0.31
+    },
+    {
+      "ts": "2026-04-30T11:22:28.404507+00:00",
+      "top_bucket": "8.0-8.0C",
+      "top_price": 0.305
+    },
+    {
+      "ts": "2026-04-30T12:23:18.425893+00:00",
+      "top_bucket": "8.0-8.0C",
+      "top_price": 0.33
+    },
+    {
+      "ts": "2026-04-30T13:24:08.580044+00:00",
+      "top_bucket": "8.0-8.0C",
+      "top_price": 0.33
+    },
+    {
+      "ts": "2026-04-30T14:24:56.987351+00:00",
+      "top_bucket": "8.0-8.0C",
+      "top_price": 0.335
+    },
+    {
+      "ts": "2026-04-30T15:25:49.233033+00:00",
+      "top_bucket": "9.0-9.0C",
+      "top_price": 0.35
+    }
+  ],
+  "all_outcomes": [
+    {
+      "question": "Will the highest temperature in Ankara be 3°C or below on May 2?",
+      "market_id": "2122292",
+      "range": [
+        -999.0,
+        3.0
+      ],
+      "bid": 0.003,
+      "ask": 0.003,
+      "price": 0.003,
+      "spread": 0.0,
+      "volume": 835.0
+    },
+    {
+      "question": "Will the highest temperature in Ankara be 4°C on May 2?",
+      "market_id": "2122293",
+      "range": [
+        4.0,
+        4.0
+      ],
+      "bid": 0.0055,
+      "ask": 0.0055,
+      "price": 0.0055,
+      "spread": 0.0,
+      "volume": 939.0
+    },
+    {
+      "question": "Will the highest temperature in Ankara be 5°C on May 2?",
+      "market_id": "2122294",
+      "range": [
+        5.0,
+        5.0
+      ],
+      "bid": 0.0065,
+      "ask": 0.0065,
+      "price": 0.0065,
+      "spread": 0.0,
+      "volume": 497.0
+    },
+    {
+      "question": "Will the highest temperature in Ankara be 6°C on May 2?",
+      "market_id": "2122295",
+      "range": [
+        6.0,
+        6.0
+      ],
+      "bid": 0.035,
+      "ask": 0.035,
+      "price": 0.035,
+      "spread": 0.0,
+      "volume": 107.0
+    },
+    {
+      "question": "Will the highest temperature in Ankara be 7°C on May 2?",
+      "market_id": "2122296",
+      "range": [
+        7.0,
+        7.0
+      ],
+      "bid": 0.11,
+      "ask": 0.11,
+      "price": 0.11,
+      "spread": 0.0,
+      "volume": 110.0
+    },
+    {
+      "question": "Will the highest temperature in Ankara be 8°C on May 2?",
+      "market_id": "2122297",
+      "range": [
+        8.0,
+        8.0
+      ],
+      "bid": 0.345,
+      "ask": 0.345,
+      "price": 0.345,
+      "spread": 0.0,
+      "volume": 225.0
+    },
+    {
+      "question": "Will the highest temperature in Ankara be 9°C on May 2?",
+      "market_id": "2122298",
+      "range": [
+        9.0,
+        9.0
+      ],
+      "bid": 0.35,
+      "ask": 0.35,
+      "price": 0.35,
+      "spread": 0.0,
+      "volume": 176.0
+    },
+    {
+      "question": "Will the highest temperature in Ankara be 10°C on May 2?",
+      "market_id": "2122299",
+      "range": [
+        10.0,
+        10.0
+      ],
+      "bid": 0.155,
+      "ask": 0.155,
+      "price": 0.155,
+      "spread": 0.0,
+      "volume": 178.0
+    },
+    {
+      "question": "Will the highest temperature in Ankara be 11°C on May 2?",
+      "market_id": "2122300",
+      "range": [
+        11.0,
+        11.0
+      ],
+      "bid": 0.055,
+      "ask": 0.055,
+      "price": 0.055,
+      "spread": 0.0,
+      "volume": 138.0
+    },
+    {
+      "question": "Will the highest temperature in Ankara be 12°C on May 2?",
+      "market_id": "2122301",
+      "range": [
+        12.0,
+        12.0
+      ],
+      "bid": 0.0115,
+      "ask": 0.0115,
+      "price": 0.0115,
+      "spread": 0.0,
+      "volume": 353.0
+    },
+    {
+      "question": "Will the highest temperature in Ankara be 13°C or higher on May 2?",
+      "market_id": "2122302",
+      "range": [
+        13.0,
+        999.0
+      ],
+      "bid": 0.006,
+      "ask": 0.006,
+      "price": 0.006,
+      "spread": 0.0,
+      "volume": 143.0
+    }
+  ],
+  "created_at": "2026-04-30T05:04:06.145537+00:00"
+}

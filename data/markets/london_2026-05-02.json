@@ -1,0 +1,336 @@
+{
+  "city": "london",
+  "city_name": "London",
+  "date": "2026-05-02",
+  "unit": "C",
+  "station": "EGLC",
+  "event_end_date": "2026-05-02T12:00:00Z",
+  "hours_at_discovery": 54.9,
+  "status": "open",
+  "position": {
+    "market_id": "2122168",
+    "question": "Will the highest temperature in London be 23°C on May 2?",
+    "bucket_low": 23.0,
+    "bucket_high": 23.0,
+    "entry_price": 0.137,
+    "bid_at_entry": 0.11,
+    "spread": 0.027,
+    "shares": 7.3,
+    "cost": 1.0,
+    "p": 0.3276,
+    "ev": 1.3912,
+    "kelly": 0.0699,
+    "forecast_temp": 23.0,
+    "forecast_src": "ecmwf",
+    "sigma": 1.1823553388540462,
+    "opened_at": "2026-04-30T13:24:01.517205+00:00",
+    "status": "open",
+    "pnl": null,
+    "exit_price": null,
+    "close_reason": null,
+    "closed_at": null
+  },
+  "actual_temp": null,
+  "resolved_outcome": null,
+  "pnl": null,
+  "forecast_snapshots": [
+    {
+      "ts": "2026-04-30T05:03:57.872911+00:00",
+      "horizon": "D+2",
+      "hours_left": 54.9,
+      "ecmwf": 23.0,
+      "hrrr": null,
+      "metar": null,
+      "best": 23.0,
+      "best_source": "ecmwf"
+    },
+    {
+      "ts": "2026-04-30T06:04:44.073925+00:00",
+      "horizon": "D+2",
+      "hours_left": 53.9,
+      "ecmwf": 23.0,
+      "hrrr": null,
+      "metar": null,
+      "best": 23.0,
+      "best_source": "ecmwf"
+    },
+    {
+      "ts": "2026-04-30T07:05:31.204099+00:00",
+      "horizon": "D+2",
+      "hours_left": 52.9,
+      "ecmwf": 23.0,
+      "hrrr": null,
+      "metar": null,
+      "best": 23.0,
+      "best_source": "ecmwf"
+    },
+    {
+      "ts": "2026-04-30T08:06:42.632046+00:00",
+      "horizon": "D+2",
+      "hours_left": 51.9,
+      "ecmwf": 23.0,
+      "hrrr": null,
+      "metar": null,
+      "best": 23.0,
+      "best_source": "ecmwf"
+    },
+    {
+      "ts": "2026-04-30T09:08:05.809821+00:00",
+      "horizon": "D+2",
+      "hours_left": 50.9,
+      "ecmwf": 23.0,
+      "hrrr": null,
+      "metar": null,
+      "best": 23.0,
+      "best_source": "ecmwf"
+    },
+    {
+      "ts": "2026-04-30T11:22:21.484091+00:00",
+      "horizon": "D+2",
+      "hours_left": 48.6,
+      "ecmwf": 23.0,
+      "hrrr": null,
+      "metar": null,
+      "best": 23.0,
+      "best_source": "ecmwf"
+    },
+    {
+      "ts": "2026-04-30T12:23:12.919764+00:00",
+      "horizon": "D+2",
+      "hours_left": 47.6,
+      "ecmwf": 23.0,
+      "hrrr": null,
+      "metar": null,
+      "best": 23.0,
+      "best_source": "ecmwf"
+    },
+    {
+      "ts": "2026-04-30T13:24:01.517205+00:00",
+      "horizon": "D+2",
+      "hours_left": 46.6,
+      "ecmwf": 23.0,
+      "hrrr": null,
+      "metar": null,
+      "best": 23.0,
+      "best_source": "ecmwf"
+    },
+    {
+      "ts": "2026-04-30T14:24:49.727811+00:00",
+      "horizon": "D+2",
+      "hours_left": 45.6,
+      "ecmwf": 22.3,
+      "hrrr": null,
+      "metar": null,
+      "best": 22.3,
+      "best_source": "ecmwf"
+    },
+    {
+      "ts": "2026-04-30T15:25:44.125977+00:00",
+      "horizon": "D+2",
+      "hours_left": 44.6,
+      "ecmwf": 22.3,
+      "hrrr": null,
+      "metar": null,
+      "best": 22.3,
+      "best_source": "ecmwf"
+    }
+  ],
+  "market_snapshots": [
+    {
+      "ts": "2026-04-30T05:03:57.872911+00:00",
+      "top_bucket": "20.0-20.0C",
+      "top_price": 0.2
+    },
+    {
+      "ts": "2026-04-30T06:04:44.073925+00:00",
+      "top_bucket": "20.0-20.0C",
+      "top_price": 0.215
+    },
+    {
+      "ts": "2026-04-30T07:05:31.204099+00:00",
+      "top_bucket": "21.0-21.0C",
+      "top_price": 0.245
+    },
+    {
+      "ts": "2026-04-30T08:06:42.632046+00:00",
+      "top_bucket": "21.0-21.0C",
+      "top_price": 0.305
+    },
+    {
+      "ts": "2026-04-30T09:08:05.809821+00:00",
+      "top_bucket": "21.0-21.0C",
+      "top_price": 0.315
+    },
+    {
+      "ts": "2026-04-30T11:22:21.484091+00:00",
+      "top_bucket": "21.0-21.0C",
+      "top_price": 0.345
+    },
+    {
+      "ts": "2026-04-30T12:23:12.919764+00:00",
+      "top_bucket": "21.0-21.0C",
+      "top_price": 0.365
+    },
+    {
+      "ts": "2026-04-30T13:24:01.517205+00:00",
+      "top_bucket": "21.0-21.0C",
+      "top_price": 0.365
+    },
+    {
+      "ts": "2026-04-30T14:24:49.727811+00:00",
+      "top_bucket": "21.0-21.0C",
+      "top_price": 0.35
+    },
+    {
+      "ts": "2026-04-30T15:25:44.125977+00:00",
+      "top_bucket": "21.0-21.0C",
+      "top_price": 0.36
+    }
+  ],
+  "all_outcomes": [
+    {
+      "question": "Will the highest temperature in London be 15°C or below on May 2?",
+      "market_id": "2122160",
+      "range": [
+        -999.0,
+        15.0
+      ],
+      "bid": 0.0025,
+      "ask": 0.0025,
+      "price": 0.0025,
+      "spread": 0.0,
+      "volume": 3710.0
+    },
+    {
+      "question": "Will the highest temperature in London be 16°C on May 2?",
+      "market_id": "2122161",
+      "range": [
+        16.0,
+        16.0
+      ],
+      "bid": 0.0045,
+      "ask": 0.0045,
+      "price": 0.0045,
+      "spread": 0.0,
+      "volume": 1640.0
+    },
+    {
+      "question": "Will the highest temperature in London be 17°C on May 2?",
+      "market_id": "2122162",
+      "range": [
+        17.0,
+        17.0
+      ],
+      "bid": 0.008,
+      "ask": 0.008,
+      "price": 0.008,
+      "spread": 0.0,
+      "volume": 2645.0
+    },
+    {
+      "question": "Will the highest temperature in London be 18°C on May 2?",
+      "market_id": "2122163",
+      "range": [
+        18.0,
+        18.0
+      ],
+      "bid": 0.0105,
+      "ask": 0.0105,
+      "price": 0.0105,
+      "spread": 0.0,
+      "volume": 1296.0
+    },
+    {
+      "question": "Will the highest temperature in London be 19°C on May 2?",
+      "market_id": "2122164",
+      "range": [
+        19.0,
+        19.0
+      ],
+      "bid": 0.084,
+      "ask": 0.084,
+      "price": 0.084,
+      "spread": 0.0,
+      "volume": 562.0
+    },
+    {
+      "question": "Will the highest temperature in London be 20°C on May 2?",
+      "market_id": "2122165",
+      "range": [
+        20.0,
+        20.0
+      ],
+      "bid": 0.175,
+      "ask": 0.175,
+      "price": 0.175,
+      "spread": 0.0,
+      "volume": 673.0
+    },
+    {
+      "question": "Will the highest temperature in London be 21°C on May 2?",
+      "market_id": "2122166",
+      "range": [
+        21.0,
+        21.0
+      ],
+      "bid": 0.36,
+      "ask": 0.36,
+      "price": 0.36,
+      "spread": 0.0,
+      "volume": 1209.0
+    },
+    {
+      "question": "Will the highest temperature in London be 22°C on May 2?",
+      "market_id": "2122167",
+      "range": [
+        22.0,
+        22.0
+      ],
+      "bid": 0.22,
+      "ask": 0.22,
+      "price": 0.22,
+      "spread": 0.0,
+      "volume": 1784.0
+    },
+    {
+      "question": "Will the highest temperature in London be 23°C on May 2?",
+      "market_id": "2122168",
+      "range": [
+        23.0,
+        23.0
+      ],
+      "bid": 0.142,
+      "ask": 0.142,
+      "price": 0.142,
+      "spread": 0.0,
+      "volume": 997.0
+    },
+    {
+      "question": "Will the highest temperature in London be 24°C on May 2?",
+      "market_id": "2122169",
+      "range": [
+        24.0,
+        24.0
+      ],
+      "bid": 0.0225,
+      "ask": 0.0225,
+      "price": 0.0225,
+      "spread": 0.0,
+      "volume": 924.0
+    },
+    {
+      "question": "Will the highest temperature in London be 25°C or higher on May 2?",
+      "market_id": "2122170",
+      "range": [
+        25.0,
+        999.0
+      ],
+      "bid": 0.0095,
+      "ask": 0.0095,
+      "price": 0.0095,
+      "spread": 0.0,
+      "volume": 1553.0
+    }
+  ],
+  "created_at": "2026-04-30T05:03:59.741572+00:00"
+}
